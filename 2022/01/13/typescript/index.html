@@ -1,22 +1,41 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <meta name="description" content="男朋友教程第一弹typescript
-简介：想必男朋友肯定知道JavaScript，我就不赘述了，TypeScript是JavaScript的一个超集，也就是说现有的JavaScript代码可以丝滑地与TypeScript一起运行，无语任何修改，TypeScript 可处理已有的 JavaScript 代码，并只对其中的 TypeScript 代码进行编译。" />
-  
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
 
-  
-  
-  
-  
-  
-  
-  <title>typescript | bluefatのblog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="男朋友教程第一弹typescript 简介：想必男朋友肯定知道JavaScript，我就不赘述了，TypeScript是JavaScript的一个超集，也就是说现有的JavaScript代码可以丝滑地与TypeScript一起运行，无语任何修改，TypeScript 可处理已有的 JavaScript 代码，并只对其中的 TypeScript 代码进行编译。">
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+    
+    
+    
+    
+
+
+    <!-- meta -->
+
+
+<title>typescript | bluefatのblog</title>
+
+
+    <meta name="keywords" content="Boy Friend">
+
+
+
+
+    <!-- OpenGraph -->
+ 
+    <meta name="description" content="男朋友教程第一弹typescript 简介：想必男朋友肯定知道JavaScript，我就不赘述了，TypeScript是JavaScript的一个超集，也就是说现有的JavaScript代码可以丝滑地与TypeScript一起运行，无语任何修改，TypeScript 可处理已有的 JavaScript 代码，并只对其中的 TypeScript 代码进行编译。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="typescript">
 <meta property="og:url" content="http://example.com/2022/01/13/typescript/index.html">
@@ -27,70 +46,107 @@
 <meta property="article:modified_time" content="2022-01-13T07:45:51.673Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Boy Friend">
-<meta name="twitter:card" content="summary">
-  
-  
-    <link rel="icon" href="/css/images/favicon.ico">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<meta name="twitter:card" content="summary_large_image">
 
-  
 
-  
-  <!-- baidu webmaster push -->
-  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/default.css" media="none" onload="this.media='all'">
+        
+    
+
+    
+    
+
+    
+
+     
+
+    <!-- custom head -->
+
 <meta name="generator" content="Hexo 5.4.0"></head>
-<body class="home blog custom-background custom-font-enabled single-author">
-  <div id="page" class="hfeed site">
-      <header id="masthead" class="site-header" role="banner">
-    <hgroup>
-      <h1 class="site-title">
-        <a href="/" title="bluefatのblog" rel="home">bluefatのblog</a>
-      </h1>
-      
-        <h2 class="site-description hitokoto"></h2>
-        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
-      
-    </hgroup>
 
-    <nav id="site-navigation" class="main-navigation" role="navigation">
-            <button class="menu-toggle">菜单</button>
-            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
-            <div class="menu-main-container">
-                <ul id="menu-main" class="nav-menu">
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Demo</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
                 
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                    <a href="/" class="navbar-menu button">首页</a>
                 
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                    <a href="/tags/" class="navbar-menu button">标签</a>
                 
-                </ul>
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/friends/" class="navbar-menu button">友链</a>
+                
+                    <a href="/page/" class="navbar-menu button">Page</a>
+                
             </div>
-    </nav>
+        
+        
+        
+
+        
+        
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/friends/" class="dropdown-menu button">友链</a>
+                
+                    <a href="/page/" class="dropdown-menu button">Page</a>
+                
+            </div>
+        
+    </div>
 </header>
 
-      <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-typescript" class="post-typescript post type-post status-publish format-standard hentry">
-    <!---->
 
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title article-title">
-      typescript
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        typescript
     </h1>
-  
-
+    <div class="post-title__meta">
+        <a href="/archives/2022/01/" class="post-meta__date button">2022-01-13</a>
         
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://example.com/2022/01/13/typescript/" data-id="ckycnfuty0000ewlq0ggvd7of" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
+ 
+        
+    
+    
 
-    <div class="entry-content">
-      
+
+ 
+
+ 
+    </div>
+</div>
+
+
+
+<article class="post content-card">
+    <div class="post__header"></div>
+    <div class="post__content">
         <h1 id="男朋友教程第一弹"><a href="#男朋友教程第一弹" class="headerlink" title="男朋友教程第一弹"></a>男朋友教程第一弹</h1><h1 id="typescript"><a href="#typescript" class="headerlink" title="typescript"></a>typescript</h1><ol>
 <li><p>简介：想必男朋友肯定知道JavaScript，我就不赘述了，TypeScript是JavaScript的一个超集，也就是说现有的JavaScript代码可以丝滑地与TypeScript一起运行，无语任何修改，TypeScript 可处理已有的 JavaScript 代码，并只对其中的 TypeScript 代码进行编译。<span id="more"></span></p>
 </li>
@@ -126,130 +182,97 @@
 </li>
 </ol>
 
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2022/01/13/typescript/">
-    <time datetime="2022-01-13T06:50:14.000Z" class="entry-date">
-        2022-01-13
-    </time>
-</a>
-    
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Boy-Friend/" rel="tag">Boy Friend</a></li></ul>
-
-    </footer>
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2022-01-13</p></div> 
+    <div class="post-entry__tags"><a href="/tags/Boy-Friend/" class="post-tags__link button"># Boy Friend</a></div> 
 </article>
 
 
-    
-<nav class="nav-single">
-    <h3 class="assistive-text">文章导航</h3>
-    
-    
-        <span class="nav-next"><a href="/2022/01/13/literature/" rel="next">literature <span class="meta-nav">→</span></a></span>
-    
-</nav><!-- .nav-single -->
-
-
-
-
-
-
-
-</div></div>
-        <div id="secondary" class="widget-area" role="complementary">
-  
-    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
-    <div>
-        <input type="text" value="" name="s" id="s" />
-        <input type="submit" id="searchsubmit" value="搜索" />
+    <div class="nav">
+        <div class="nav__prev">
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/2022/01/13/literature/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            literature
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
     </div>
-</form></aside>
-  
-    
-  
-    
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget-content">
-      <ul>
-        
-          <li>
-            <a href="/2022/01/13/typescript/">typescript</a>
-          </li>
-        
-          <li>
-            <a href="/2022/01/13/literature/">literature</a>
-          </li>
-        
-          <li>
-            <a href="/2022/01/12/wuhai/">wuhai</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/17/%E6%B0%94%E8%B1%A1%E5%AD%A6%E4%B8%AD%E6%9C%80%E6%9C%80%E6%9C%80%E5%9F%BA%E7%A1%80%E7%9A%84%E7%9F%A5%E8%AF%86/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/17/%E4%B8%AA%E4%BA%BA%E4%BD%BF%E7%94%A8%E7%9A%84Arch%20Linux%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/">(no title)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </aside>
 
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget-content">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Boy-Friend/" rel="tag">Boy Friend</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E7%A0%94%E5%A4%8D%E8%AF%95/" rel="tag">考研复试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%85%E8%AF%BB%E6%96%87%E7%8C%AE/" rel="tag">阅读文献</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </aside>
 
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget-content tagcloud">
-      <a href="/tags/Boy-Friend/" style="font-size: 10px;">Boy Friend</a> <a href="/tags/%E8%80%83%E7%A0%94%E5%A4%8D%E8%AF%95/" style="font-size: 10px;">考研复试</a> <a href="/tags/%E9%98%85%E8%AF%BB%E6%96%87%E7%8C%AE/" style="font-size: 10px;">阅读文献</a>
-    </div>
-  </aside>
 
-  
-</div>
-      </div>
-      <footer id="colophon" role="contentinfo">
-    <p>&copy; 2022 John Doe
-    All rights reserved.</p>
-    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+
+
+</main>
+
+            <footer class="footer">
+    
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2022 <a href="/">bluefatのblog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
 </footer>
-    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
 
-<script src="/js/jquery-3.3.1.min.js"></script>
+        </div>
+         
 
+ 
 
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+ 
 
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
+ 
 
-
-
-
-<script src="/js/script.js"></script>
+ 
 
 
-<script src="/js/navigation.js"></script>
 
-<div id="bg"></div>
+ 
 
-  </div>
-</body>
+
+
+ 
+
+
+    
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
 </html>
