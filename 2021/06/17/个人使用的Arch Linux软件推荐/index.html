@@ -1,246 +1,194 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-    <meta charset="utf-8">
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>bluefatのblog</title>
+  <meta name="author" content="John Doe" />
 
-    
+  
+  <meta name="description" content="个人使用的Arch Linux软件推荐​    本人在2021年6月12日在入坑Arch Linux，入坑后发现该系统定制性极强🤨，一切都要从头开始，从安装桌面开始，再到各种美化，微调🤪，不过这也是Arch的乐趣所在嘛😎；
+办公类：
+WPS: 曾经使用过libreoffice，但是libreoffice排版及其不好用，那个" />
+  
 
-    <!-- 渲染优化 -->
-    <meta name="renderer" content="webkit">
-    <meta name="force-rendering" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="HandheldFriendly" content="True" >
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
 
-    <!--icon-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    
-    
-    
-    
-    
+  
+  <meta property="og:site_name" content="bluefatのblog" />
 
+  
+  
 
-    <!-- meta -->
+  
+    <meta property="og:image" content="" />
+  
 
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
 
-<title>no title | bluefatのblog</title>
-
-
-
-
-
-    <!-- OpenGraph -->
- 
-    <meta name="description" content="个人使用的Arch Linux软件推荐​    本人在2021年6月12日在入坑Arch Linux，入坑后发现该系统定制性极强🤨，一切都要从头开始，从安装桌面开始，再到各种美化，微调🤪，不过这也是Arch的乐趣所在嘛😎； 办公类： WPS: 曾经使用过libreoffice，但是libreoffice排版及其不好用，那个">
-<meta property="og:type" content="article">
-<meta property="og:title" content="bluefatのblog">
-<meta property="og:url" content="http://example.com/2021/06/17/%E4%B8%AA%E4%BA%BA%E4%BD%BF%E7%94%A8%E7%9A%84Arch%20Linux%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/index.html">
-<meta property="og:site_name" content="bluefatのblog">
-<meta property="og:description" content="个人使用的Arch Linux软件推荐​    本人在2021年6月12日在入坑Arch Linux，入坑后发现该系统定制性极强🤨，一切都要从头开始，从安装桌面开始，再到各种美化，微调🤪，不过这也是Arch的乐趣所在嘛😎； 办公类： WPS: 曾经使用过libreoffice，但是libreoffice排版及其不好用，那个">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-06-17T04:34:00.029Z">
-<meta property="article:modified_time" content="2022-01-09T12:33:32.658Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" href="/atom.xml" title="bluefatのblog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
 
 
-    
-<link rel="stylesheet" href="/css/style/main.css">
- 
-
-    
-    
-        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/default.css" media="none" onload="this.media='all'">
-        
-    
-
-    
-    
-
-    
-
-     
-
-    <!-- custom head -->
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 
-    <body>
-        <div id="app">
-            <header class="header">
-    <div class="header__left">
-        <a href="/" class="button">
-            <span class="logo__text">Bluefat&#39;s blog</span>
-        </a>
-    </div>
-    <div class="header__right">
-        
-            <div class="navbar__menus">
-                
-                    <a href="/" class="navbar-menu button">首页</a>
-                
-                    <a href="/tags/" class="navbar-menu button">标签</a>
-                
-                    <a href="/archives/" class="navbar-menu button">归档</a>
-                
-                    <a href="/friends/" class="navbar-menu button">友链</a>
-                
-                    <a href="/page/" class="navbar-menu button">Page</a>
-                
-            </div>
-        
-        
-        
 
-        
-        
-
-        
-            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
-            <div class="dropdown-menus" id="dropdown-menus">
-                
-                    <a href="/" class="dropdown-menu button">首页</a>
-                
-                    <a href="/tags/" class="dropdown-menu button">标签</a>
-                
-                    <a href="/archives/" class="dropdown-menu button">归档</a>
-                
-                    <a href="/friends/" class="dropdown-menu button">友链</a>
-                
-                    <a href="/page/" class="dropdown-menu button">Page</a>
-                
-            </div>
-        
-    </div>
-</header>
-
-
-            <main class="main">
-    
-
-<div class="post-title">
-    <h1 class="post-title__text">
-        no title
-    </h1>
-    <div class="post-title__meta">
-        <a href="/archives/2021/06/" class="post-meta__date button">2021-06-17</a>
-        
- 
-        
-    
-    
-
-
- 
-
- 
-    </div>
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">bluefatのblog</a></h1>
+  <h2><a href="/">比起担心会后悔而什么都不做，还不如做完了再去后悔.</a></h2>
 </div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2021-06-17T04:34:00.029Z"><a href="/2021/06/17/个人使用的Arch Linux软件推荐/">2021-06-17</a></time>
+      
+      
+  
+    <h1 class="title"></h1>
+  
 
-
-
-<article class="post content-card">
-    <div class="post__header"></div>
-    <div class="post__content">
+    </header>
+    <div class="entry">
+      
         <h1 id="个人使用的Arch-Linux软件推荐"><a href="#个人使用的Arch-Linux软件推荐" class="headerlink" title="个人使用的Arch Linux软件推荐"></a>个人使用的Arch Linux软件推荐</h1><p>​    本人在2021年6月12日在入坑Arch Linux，入坑后发现该系统定制性极强🤨，一切都要从头开始，从安装桌面开始，再到各种美化，微调🤪，不过这也是Arch的乐趣所在嘛😎；</p>
 <h2 id="办公类："><a href="#办公类：" class="headerlink" title="办公类："></a><em>办公类：</em></h2><ol>
 <li><p>WPS: 曾经使用过libreoffice，但是libreoffice排版及其不好用，那个</p>
 <span id="more"></span></li>
 </ol>
 
+      
     </div>
-     
-    <div class="post-footer__meta"><p>updated at 2022-01-09</p></div> 
-    <div class="post-entry__tags"></div> 
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
 </article>
 
 
-    <div class="nav">
-        <div class="nav__prev">
-            
-                <a href="/2021/06/17/%E6%B0%94%E8%B1%A1%E5%AD%A6%E4%B8%AD%E6%9C%80%E6%9C%80%E6%9C%80%E5%9F%BA%E7%A1%80%E7%9A%84%E7%9F%A5%E8%AF%86/" class="nav__link">
-                    <div>
-                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
-                    </div>
-                    <div>
-                        <div class="nav__label">
-                            Previous Post
-                        </div>
-                        <div class="nav__title">
-                            no title
-                        </div>
-                    </div>
-                </a>
-            
-        </div>
-        <div class="nav__next">
-            
-        </div>
-    </div>
 
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:example.com">
+  </form>
+</div>
 
+  
 
-
-
-</main>
-
-            <footer class="footer">
+  
+<div class="widget tag">
+  <h3 class="title">Recent Posts</h3>
+  <ul class="entry">
     
+      <li>
+        <a href="/2022/01/13/typescript/">typescript</a>
+      </li>
     
-
-
+      <li>
+        <a href="/2022/01/13/literature/">literature</a>
+      </li>
     
-     
- 
-
- 
+      <li>
+        <a href="/2022/01/12/wuhai/">wuhai</a>
+      </li>
     
-        
-        <p class="footer-copyright">
-            Copyright © 2022 <a href="/">bluefatのblog</a>
-        </p>
+      <li>
+        <a href="/2021/06/17/气象学中最最最基础的知识/"></a>
+      </li>
     
+      <li>
+        <a href="/2021/06/17/个人使用的Arch Linux软件推荐/"></a>
+      </li>
     
-    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
-</footer>
-
-        </div>
-         
-
- 
-
- 
-
- 
-
- 
+  </ul>
+</div>
 
 
-
- 
-
-
-
- 
-
-
-    
- 
-
- 
-
- 
-
- 
-
- 
-
- 
+  
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/Boy-Friend/">Boy Friend</a><small>1</small></li>
+  
+    <li><a href="/tags/考研复试/">考研复试</a><small>1</small></li>
+  
+    <li><a href="/tags/阅读文献/">阅读文献</a><small>1</small></li>
+  
+  </ul>
+</div>
 
 
+  
+<div class="widget tagcloud">
+  <h3 class="title">Tag Cloud</h3>
+  <div class="entry">
+    <a href="/tags/Boy-Friend/" style="font-size: 10px;">Boy Friend</a> <a href="/tags/%E8%80%83%E7%A0%94%E5%A4%8D%E8%AF%95/" style="font-size: 10px;">考研复试</a> <a href="/tags/%E9%98%85%E8%AF%BB%E6%96%87%E7%8C%AE/" style="font-size: 10px;">阅读文献</a>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2022 John Doe
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
 
 
-    </body>
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id='bg'></div>
+</body>
 </html>
