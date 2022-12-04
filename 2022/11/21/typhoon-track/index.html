@@ -27,28 +27,30 @@
     <!-- meta -->
 
 
-<title>typescript | bluefatのblog</title>
+<title>印度洋北部台风路径的绘制 | bluefatのblog</title>
 
 
-    <meta name="keywords" content="Boy Friend">
+    <meta name="keywords" content="研究生代码">
 
 
 
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="男朋友教程第一弹typescript 简介：想必男朋友肯定知道JavaScript，我就不赘述了，TypeScript是JavaScript的一个超集，也就是说现有的JavaScript代码可以丝滑地与TypeScript一起运行，无语任何修改，TypeScript 可处理已有的 JavaScript 代码，并只对其中的 TypeScript 代码进行编译。">
+    <meta name="description" content="老板让我绘制论文中的图，然后耽误了一个星期都还没有开始，主要是这一个星期一直在复习海科导，再加上下载数据又花了好久的时间，然后现在从论文开头开始，先绘制印度洋北部台风路径  数据的获取首先是如何获取台风数据，据师姐说JTWC，WMO，NOAA都有印度洋北部的台风数据，研究了一下，我就决定使用NOAA的数据。为了画这个数据我费了好多心血啊！！！数据从这个网站可以下载：https:&#x2F;&#x2F;www.nce">
 <meta property="og:type" content="article">
-<meta property="og:title" content="typescript">
-<meta property="og:url" content="http://example.com/2022/01/13/typescript/index.html">
+<meta property="og:title" content="印度洋北部台风路径的绘制">
+<meta property="og:url" content="http://example.com/2022/11/21/typhoon-track/index.html">
 <meta property="og:site_name" content="bluefatのblog">
-<meta property="og:description" content="男朋友教程第一弹typescript 简介：想必男朋友肯定知道JavaScript，我就不赘述了，TypeScript是JavaScript的一个超集，也就是说现有的JavaScript代码可以丝滑地与TypeScript一起运行，无语任何修改，TypeScript 可处理已有的 JavaScript 代码，并只对其中的 TypeScript 代码进行编译。">
+<meta property="og:description" content="老板让我绘制论文中的图，然后耽误了一个星期都还没有开始，主要是这一个星期一直在复习海科导，再加上下载数据又花了好久的时间，然后现在从论文开头开始，先绘制印度洋北部台风路径  数据的获取首先是如何获取台风数据，据师姐说JTWC，WMO，NOAA都有印度洋北部的台风数据，研究了一下，我就决定使用NOAA的数据。为了画这个数据我费了好多心血啊！！！数据从这个网站可以下载：https:&#x2F;&#x2F;www.nce">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-01-13T06:50:14.000Z">
-<meta property="article:modified_time" content="2022-04-22T09:20:20.736Z">
+<meta property="og:image" content="http://example.com/2022/11/21/typhoon-track/%E5%8F%98%E9%87%8F%E5%90%8D.png">
+<meta property="article:published_time" content="2022-11-21T02:32:47.000Z">
+<meta property="article:modified_time" content="2022-11-22T14:18:06.842Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="Boy Friend">
+<meta property="article:tag" content="研究生代码">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2022/11/21/typhoon-track/%E5%8F%98%E9%87%8F%E5%90%8D.png">
 
 
     
@@ -140,10 +142,10 @@
 
 <div class="post-title">
     <h1 class="post-title__text">
-        typescript
+        印度洋北部台风路径的绘制
     </h1>
     <div class="post-title__meta">
-        <a href="/archives/2022/01/" class="post-meta__date button">2022-01-13</a>
+        <a href="/archives/2022/11/" class="post-meta__date button">2022-11-21</a>
         
  
         
@@ -160,7 +162,7 @@
 
     <aside class="post-side">
         <div class="post-side__toc">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B7%E6%9C%8B%E5%8F%8B%E6%95%99%E7%A8%8B%E7%AC%AC%E4%B8%80%E5%BC%B9"><span class="toc-number">1.</span> <span class="toc-text">男朋友教程第一弹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#typescript"><span class="toc-number">2.</span> <span class="toc-text">typescript</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E8%8E%B7%E5%8F%96"><span class="toc-number">1.</span> <span class="toc-text">数据的获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E8%AF%BB%E5%8F%96"><span class="toc-number">2.</span> <span class="toc-text">数据的读取</span></a></li></ol>
         </div>
     </aside>
     <a class="btn-toc button" id="btn-toc" tabindex="0">
@@ -170,47 +172,25 @@
     </a>
     <div class="toc-menus" id="toc-menus">
         <div class="toc-title">Article Directory</div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B7%E6%9C%8B%E5%8F%8B%E6%95%99%E7%A8%8B%E7%AC%AC%E4%B8%80%E5%BC%B9"><span class="toc-number">1.</span> <span class="toc-text">男朋友教程第一弹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#typescript"><span class="toc-number">2.</span> <span class="toc-text">typescript</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E8%8E%B7%E5%8F%96"><span class="toc-number">1.</span> <span class="toc-text">数据的获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E8%AF%BB%E5%8F%96"><span class="toc-number">2.</span> <span class="toc-text">数据的读取</span></a></li></ol>
     </div>
 
 
 <article class="post post__with-toc content-card">
     <div class="post__header"></div>
     <div class="post__content">
-        <h2 id="男朋友教程第一弹"><a href="#男朋友教程第一弹" class="headerlink" title="男朋友教程第一弹"></a>男朋友教程第一弹</h2><h2 id="typescript"><a href="#typescript" class="headerlink" title="typescript"></a>typescript</h2><ol>
-<li><p>简介：想必男朋友肯定知道JavaScript，我就不赘述了，TypeScript是JavaScript的一个超集，也就是说现有的JavaScript代码可以丝滑地与TypeScript一起运行，无语任何修改，TypeScript 可处理已有的 JavaScript 代码，并只对其中的 TypeScript 代码进行编译。<span id="more"></span></p>
-</li>
-<li><p>TypeScript安装</p>
-<p>安装需要用到npm工具，打开终端，输入以下命令，就可以安装成功了。</p>
-<p><code>npm install -g typescript</code></p>
-<p>然后再检查一下是否安装成功，需要用到<code>tsc</code>，在终端下面输入以下命令，会显示你的TypeScript的版本。</p>
-<p><code>tsc -v</code></p>
-</li>
-<li><p>简单地尝试</p>
-<p>然后我们新建一个app.ts的文件，在文件中输入如下代码：*(通常来说<code>.ts</code>是TypeScript代码文件的扩展名。)*</p>
-<p><code>var message:string = &quot;毛毛是个小可爱&quot;</code></p>
-<p><code>console.log(message)</code></p>
-<p>然后保存，在终端执行以下命令将TypeScript转换为JavaScript代码：</p>
-<p><code>tsc app.ts</code></p>
-<p>你会发现，在当前目录下（与app.ts同一目录）会生成一个app.js文件，使用<code>node</code>命令来执行app.js文件：</p>
-<p><code>node app.js</code></p>
-<p>然后就会输出<code>毛毛是个小可爱</code>了。</p>
-</li>
-</ol>
-<p>耶！你现在已经掌握了什么是TypeScript，如何安装TypeScript，如何运行第一个代码了！</p>
-<ol start="4">
-<li><p>基础语法</p>
-<p>TypeScript程序由以下几个部分组成：</p>
-<ul>
-<li>模块</li>
-<li>函数</li>
-<li>变量</li>
-<li>语句和表达式</li>
-<li>注释</li>
-</ul>
-<p>前面已经给你介绍过了简单的程序写法和运行流程，记住了吗？下面我们来学习一下tsc的常用编译参数：</p>
-</li>
-</ol>
+        <blockquote>
+<p>老板让我绘制论文中的图，然后耽误了一个星期都还没有开始，主要是这一个星期一直在复习海科导，再加上下载数据又花了好久的时间，然后现在从论文开头开始，先绘制印度洋北部台风路径</p>
+</blockquote>
+<h2 id="数据的获取"><a href="#数据的获取" class="headerlink" title="数据的获取"></a>数据的获取</h2><p>首先是如何获取台风数据，据师姐说JTWC，WMO，NOAA都有印度洋北部的台风数据，研究了一下，我就决定使用NOAA的数据。<em>为了画这个数据我费了好多心血啊！！！</em>数据从这个网站可以下载：<a target="_blank" rel="noopener" href="https://www.ncei.noaa.gov/products/international-best-track-archive?name=ib-v4-access%EF%BC%8C%E7%84%B6%E5%90%8E%E6%88%91%E8%A6%81%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%98%AF%E5%8D%B0%E5%BA%A6%E6%B4%8B%E7%9A%84%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%88%91%E5%B0%B1%E4%B8%8B%E8%BD%BD%E4%BA%86%60IBTrACS.NI.v04r00.nc%60%E8%BF%99%E4%B8%AA%E6%96%87%E4%BB%B6%EF%BC%8C%E5%9B%A0%E4%B8%BA%E6%96%87%E4%BB%B6%E5%90%8D%E4%B8%AD%60NI%60%E4%BB%A3%E8%A1%A8%E7%9A%84%E6%98%AF%E5%8C%97%E5%8D%B0%E5%BA%A6%E6%B4%8B%E3%80%82">https://www.ncei.noaa.gov/products/international-best-track-archive?name=ib-v4-access，然后我要下载的是印度洋的数据，我就下载了`IBTrACS.NI.v04r00.nc`这个文件，因为文件名中`NI`代表的是北印度洋。</a></p>
+<h2 id="数据的读取"><a href="#数据的读取" class="headerlink" title="数据的读取"></a>数据的读取</h2><p>先引入所需要的包</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> xarray <span class="keyword">as</span> xr</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> cartopy.crs <span class="keyword">as</span> ccrs</span><br><span class="line"><span class="keyword">import</span> cartopy.feature <span class="keyword">as</span> cfeature</span><br><span class="line"><span class="keyword">from</span> cartopy.mpl.ticker <span class="keyword">import</span> LongitudeFormatter, LatitudeFormatter</span><br><span class="line"><span class="keyword">import</span> matplotlib.ticker <span class="keyword">as</span> ticker</span><br><span class="line"><span class="keyword">from</span> matplotlib.pyplot <span class="keyword">import</span> MultipleLocator</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> rcParams</span><br><span class="line">rcParams[<span class="string">&#x27;font.family&#x27;</span>]=<span class="string">&#x27;serif&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后我需要的是位于孟加拉湾的‘Hudhud, Five, Vardah, Mora, Maarutha’这几个台风。这里麻烦的一点是你要先弄明白你下载好的这个nc文件里面都是什么变量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dataset = xr.open_dataset(<span class="string">&#x27;IBTrACS.NI.v04r00.nc&#x27;</span>)</span><br><span class="line">a = <span class="built_in">list</span>(dataset.keys())</span><br><span class="line">a.sort()</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+
+<p>然后输出的结果就是：<img src="/2022/11/21/typhoon-track/%E5%8F%98%E9%87%8F%E5%90%8D.png" class=""></p>
+<p>这个里面包含的好多变量是多家数据中心台风数据的集合，每家中心所做的台风是不一样的，具体可以查看<a target="_blank" rel="noopener" href="https://www.ncei.noaa.gov/sites/default/files/2021-07/IBTrACS_version4_Technical_Details.pdf%E8%AF%B4%E6%98%8E%E6%96%87%E4%BB%B6%EF%BC%8C%E6%9D%A5%E8%AF%A6%E7%BB%86%E4%BA%86%E8%A7%A3%E6%95%B0%E6%8D%AE%EF%BC%8C%E7%94%B1%E4%BA%8E%E6%88%91%E9%9C%80%E8%A6%81%E7%9A%84%E6%95%B0%E6%8D%AE%E6%98%AF%E5%8C%97%E5%8D%B0%E5%BA%A6%E6%B4%8B%E7%9A%84%EF%BC%8C%E6%89%80%E4%BB%A5%E6%88%91%E5%B0%B1%E4%B8%8B%E8%BD%BD%E4%BA%86RSMC">https://www.ncei.noaa.gov/sites/default/files/2021-07/IBTrACS_version4_Technical_Details.pdf说明文件，来详细了解数据，由于我需要的数据是北印度洋的，所以我就下载了RSMC</a> New Delhi (IMD)的数据。</p>
 
     </div>
     
@@ -222,7 +202,7 @@
             <strong>
                 Permalink: 
             </strong>
-            <a href="http://example.com/2022/01/13/typescript/">http://example.com/2022/01/13/typescript/</a>
+            <a href="http://example.com/2022/11/21/typhoon-track/">http://example.com/2022/11/21/typhoon-track/</a>
         </p>
         
             <strong>
@@ -232,38 +212,24 @@
         
     </div>
  
-    <div class="post-footer__meta"><p>updated at 2022-04-22</p></div> 
-    <div class="post-entry__tags"><a href="/tags/Boy-Friend/" class="post-tags__link button"># Boy Friend</a></div> 
+    <div class="post-footer__meta"><p>updated at 2022-11-22</p></div> 
+    <div class="post-entry__tags"><a href="/tags/%E7%A0%94%E7%A9%B6%E7%94%9F%E4%BB%A3%E7%A0%81/" class="post-tags__link button"># 研究生代码</a></div> 
 </article>
 
 
     <div class="nav">
         <div class="nav__prev">
             
-                <a href="/2022/02/02/shixi/" class="nav__link">
-                    <div>
-                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
-                    </div>
-                    <div>
-                        <div class="nav__label">
-                            Previous Post
-                        </div>
-                        <div class="nav__title">
-                            实习总结
-                        </div>
-                    </div>
-                </a>
-            
         </div>
         <div class="nav__next">
             
-                <a href="/2022/01/13/literature/" class="nav__link">
+                <a href="/2022/11/14/argo-path/" class="nav__link">
                     <div>
                         <div class="nav__label">
                             Next Post
                         </div>
                         <div class="nav__title">
-                            literature
+                            Argo浮标路径绘制
                         </div>
                     </div>
                     <div>
