@@ -45,7 +45,7 @@
 <meta property="og:description" content="使用Linux也已经有两年了吧，但是感觉仍未好好地学会如何管理这个系统，对Linux的学习只是浮于表面，会使用但是不会管理这个系统，以下是我将Linux的学习笔记发上来，从而以后便于查看  Linux 帮助命令 Linux的帮助命令有man，help，info  man命令如何使用man 命令名称   太好用了 man 7 命令名称 获取命令不同篇章的帮助">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-12-04T04:38:02.000Z">
-<meta property="article:modified_time" content="2022-12-04T05:22:48.963Z">
+<meta property="article:modified_time" content="2022-12-04T05:52:34.394Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -160,7 +160,7 @@
 
     <aside class="post-side">
         <div class="post-side__toc">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">Linux 帮助命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#man%E5%91%BD%E4%BB%A4%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">man命令如何使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#help-%E5%91%BD%E4%BB%A4%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text">help 命令如何使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#info%E5%91%BD%E4%BB%A4%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">info命令如何使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E5%88%87%E7%9A%86%E6%96%87%E4%BB%B6-Linux%E6%96%87%E4%BB%B6%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B"><span class="toc-number">2.</span> <span class="toc-text">一切皆文件-Linux文件如何查看</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%9F%A5%E7%9C%8B"><span class="toc-number">2.1.</span> <span class="toc-text">文件查看</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">Linux 帮助命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#man%E5%91%BD%E4%BB%A4%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">man命令如何使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#help-%E5%91%BD%E4%BB%A4%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text">help 命令如何使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#info%E5%91%BD%E4%BB%A4%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">info命令如何使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E5%88%87%E7%9A%86%E6%96%87%E4%BB%B6-Linux%E6%96%87%E4%BB%B6%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B"><span class="toc-number">2.</span> <span class="toc-text">一切皆文件-Linux文件如何查看</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E6%96%87%E4%BB%B6%E6%9F%A5%E7%9C%8B"><span class="toc-number">2.1.</span> <span class="toc-text">简单文件查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ls%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3"><span class="toc-number">2.2.</span> <span class="toc-text">ls命令详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.3.</span> <span class="toc-text"></span></a></li></ol></li></ol>
         </div>
     </aside>
     <a class="btn-toc button" id="btn-toc" tabindex="0">
@@ -170,7 +170,7 @@
     </a>
     <div class="toc-menus" id="toc-menus">
         <div class="toc-title">Article Directory</div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">Linux 帮助命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#man%E5%91%BD%E4%BB%A4%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">man命令如何使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#help-%E5%91%BD%E4%BB%A4%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text">help 命令如何使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#info%E5%91%BD%E4%BB%A4%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">info命令如何使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E5%88%87%E7%9A%86%E6%96%87%E4%BB%B6-Linux%E6%96%87%E4%BB%B6%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B"><span class="toc-number">2.</span> <span class="toc-text">一切皆文件-Linux文件如何查看</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%9F%A5%E7%9C%8B"><span class="toc-number">2.1.</span> <span class="toc-text">文件查看</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">Linux 帮助命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#man%E5%91%BD%E4%BB%A4%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">man命令如何使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#help-%E5%91%BD%E4%BB%A4%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text">help 命令如何使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#info%E5%91%BD%E4%BB%A4%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">info命令如何使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E5%88%87%E7%9A%86%E6%96%87%E4%BB%B6-Linux%E6%96%87%E4%BB%B6%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B"><span class="toc-number">2.</span> <span class="toc-text">一切皆文件-Linux文件如何查看</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E6%96%87%E4%BB%B6%E6%9F%A5%E7%9C%8B"><span class="toc-number">2.1.</span> <span class="toc-text">简单文件查看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ls%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3"><span class="toc-number">2.2.</span> <span class="toc-text">ls命令详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.3.</span> <span class="toc-text"></span></a></li></ol></li></ol>
     </div>
 
 
@@ -189,14 +189,17 @@
 
 <h3 id="help-命令如何使用"><a href="#help-命令如何使用" class="headerlink" title="help 命令如何使用"></a>help 命令如何使用</h3><p>内部命令获取帮助，如 <code>help cd</code>，外部命令，如<code>ls --help</code>。如何区分命令是内部命令还是外部命令 ？在终端中输入<code>type 命令名称</code>查看输出结果。</p>
 <h3 id="info命令如何使用"><a href="#info命令如何使用" class="headerlink" title="info命令如何使用"></a>info命令如何使用</h3><p>info帮助比help更加详细。命令使用如<code>info ls</code> </p>
-<h2 id="一切皆文件-Linux文件如何查看"><a href="#一切皆文件-Linux文件如何查看" class="headerlink" title="一切皆文件-Linux文件如何查看"></a>一切皆文件-Linux文件如何查看</h2><h3 id="文件查看"><a href="#文件查看" class="headerlink" title="文件查看"></a>文件查看</h3><p><code>pwd</code>显示当前的操作目录</p>
+<h2 id="一切皆文件-Linux文件如何查看"><a href="#一切皆文件-Linux文件如何查看" class="headerlink" title="一切皆文件-Linux文件如何查看"></a>一切皆文件-Linux文件如何查看</h2><h3 id="简单文件查看"><a href="#简单文件查看" class="headerlink" title="简单文件查看"></a>简单文件查看</h3><p><code>pwd</code>显示当前的操作目录</p>
 <p><code>ls</code>查看当前目录下的文件</p>
-<p><code>ls -l</code>长格式显示文件</p>
+<h3 id="ls命令详解"><a href="#ls命令详解" class="headerlink" title="ls命令详解"></a>ls命令详解</h3><p><code>ls -l</code>长格式显示文件</p>
 <p><code>ls -a</code>显示隐藏文件</p>
-<p><code>ls -r</code>逆序显示文件</p>
-<p><code>ls -t</code>按照时间顺序显示</p>
+<p><code>ls -r</code>逆序显示文件，配合其他参数使用，默认是使用文件名的逆向如<code>ls -l -r</code></p>
+<p><code>ls -t</code>按照时间顺序显示，按照时间的逆序<code>ls -l -t -r</code>，简化操作<code>ls -lrt</code></p>
 <p><code>ls -R</code>递归显示</p>
-
+<p><code>ls 目录名</code>查看目标目录下的文件，以上命令可以组合<code>ls -lartR</code></p>
+<p><em>ps:普通用户如何切换为root用户 <code>su - root</code></em></p>
+<p><code>ls</code>命令也可以显示多个文件夹下的目录，如<code>ls /root /</code>这样就是显示root文件夹下和根目录文件夹下的所有文件</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
     </div>
     
     <div class="post__license">
