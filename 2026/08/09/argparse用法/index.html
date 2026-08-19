@@ -49,7 +49,7 @@
   
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"YP_Shao","sameAs":[],"image":"https://bluefatshao.github.io/images/avatar.jpg"},"dateCreated":"2026-08-09T15:47:27+08:00","dateModified":"2026-08-14T11:49:25+08:00","datePublished":"2026-08-09T15:47:27+08:00","description":"","headline":"argparse用法","mainEntityOfPage":{"@type":"WebPage","@id":"https://bluefatshao.github.io/2026/08/09/argparse%E7%94%A8%E6%B3%95/"},"publisher":{"@type":"Organization","name":"YP_Shao","sameAs":[],"image":"https://bluefatshao.github.io/images/avatar.jpg","logo":{"@type":"ImageObject","url":"https://bluefatshao.github.io/images/avatar.jpg"}},"url":"https://bluefatshao.github.io/2026/08/09/argparse%E7%94%A8%E6%B3%95/","keywords":"Python","image":[]}</script>
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 </head>
 <body><div id="l_cover"></div><div class="l_body content" id="start" layout="post" type="story" text-indent><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
 
@@ -138,8 +138,6 @@
 <footer class="page-footer slide-up footnote"><hr><div class="text"><p>本站由 <a href="/">YP_Shao</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.37.0">Stellar 1.37.0</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right"><div class="widgets">
-
-
 
 <widget class="widget-wrapper slide-up toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%80%E8%A6%81%E7%94%A8%E7%9A%84%E7%90%86%E7%94%B1"><span class="toc-text">需要用的理由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#argparse%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">argparse的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0"><span class="toc-text">传入参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%97%B6%E8%BF%90%E8%A1%8C%E4%B8%8D%E5%90%8C%E5%8F%82%E6%95%B0%E7%9A%84%E7%BB%93%E6%9E%9C"><span class="toc-text">同时运行不同参数的结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E6%A3%80%E6%9F%A5%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">自动检查数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><span class="toc-text">自动生成使用说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E5%92%8C%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="toc-text">位置参数和关键字参数</span></a></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
 </div></aside><div class='float-panel'>
@@ -1579,5 +1577,5 @@
 
 
 <!-- inject -->
-
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><script src="/js/vendor/swup.js?v=4.9.2"></script><script>window.bluefatMusicConfig={title:"Claire 的歌单",server:"netease",type:"playlist",id:"5442557840"};</script><script src="/js/pjax.js?v=4"></script>
 </div></body></html>
