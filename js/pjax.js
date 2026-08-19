@@ -40,10 +40,52 @@
       '#bluefat-global-music{position:fixed;right:20px;bottom:20px;width:280px;z-index:20;padding:12px;border-radius:16px;background:var(--card,#fff);box-shadow:0 8px 30px rgba(0,0,0,.12)}',
       '#bluefat-global-music .music-title{padding:0 4px 10px;font-size:13px;font-weight:600;color:var(--text-p1,#555)}',
       '#bluefat-global-music .aplayer{margin:0;box-shadow:none;background:transparent}',
+      '.booklist-toggle{display:block;width:100%;margin:12px 0;padding:9px 12px;border:0;border-radius:10px;background:var(--block,rgba(128,128,128,.08));color:var(--text-p1,#555);font:inherit;font-weight:600;cursor:pointer;transition:background .2s ease,color .2s ease}',
+      '.booklist-toggle:hover{background:rgba(204,149,192,.18);color:#a35b91}',
       '@media(max-width:667px){#bluefat-global-music{right:8px;bottom:72px;left:8px;width:auto}}'
     ].join('');
     document.head.appendChild(style);
     window.bluefatMusicMounted = true;
+  }
+
+  function initBooklistToggle() {
+    document.querySelectorAll('widget.markdown .widget-body').forEach(function (body) {
+      if (body.querySelector('.booklist-toggle')) return;
+
+      const entries = Array.from(body.querySelectorAll(':scope > p')).filter(function (entry) {
+        return entry.querySelector('strong a[href*="book.douban.com/subject/"]');
+      });
+      const visibleCount = 20;
+      if (entries.length <= visibleCount) return;
+
+      const hiddenEntries = entries.slice(visibleCount);
+      function setCollapsed(collapsed) {
+        hiddenEntries.forEach(function (entry) {
+          entry.hidden = collapsed;
+          const divider = entry.nextElementSibling;
+          if (divider && divider.tagName === 'HR') divider.hidden = collapsed;
+        });
+        button.setAttribute('aria-expanded', String(!collapsed));
+        button.textContent = collapsed
+          ? 'show more'
+          : 'dismiss';
+      }
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'booklist-toggle';
+
+      const twentiethDivider = entries[visibleCount - 1].nextElementSibling;
+      const anchor = twentiethDivider && twentiethDivider.tagName === 'HR'
+        ? twentiethDivider
+        : entries[visibleCount - 1];
+      anchor.insertAdjacentElement('afterend', button);
+
+      button.addEventListener('click', function () {
+        setCollapsed(button.getAttribute('aria-expanded') === 'true');
+      });
+      setCollapsed(true);
+    });
   }
 
   function stellarUtils() {
@@ -84,6 +126,7 @@
   }
 
   mountGlobalMusic();
+  initBooklistToggle();
 
   if (typeof window.Swup !== 'function' || window.bluefatPjax) return;
 
@@ -105,6 +148,7 @@
 
   swup.hooks.on('page:view', function () {
     reinitializeStellar();
+    initBooklistToggle();
     window.scrollTo({ top: 0, behavior: 'instant' });
   });
 
