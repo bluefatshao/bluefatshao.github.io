@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.37.0" theme-name="Stellar" theme-version="1.37.0">
   
-  <meta name="robots" content="none">
+  
   <meta name="generator" content="Hexo 8.1.2">
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin><link rel="preconnect" href="https://unpkg.com" crossorigin><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -17,22 +17,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
-  <title>Claireのblog</title>
+  <title>logger用法 - Claireのblog</title>
 
-  <meta name="description" content="阅读、科研与音乐">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Claireのblog">
-<meta property="og:url" content="https://bluefatshao.github.io/404">
-<meta property="og:site_name" content="Claireのblog">
-<meta property="og:description" content="阅读、科研与音乐">
+  <meta name="description" content="为什么要使用logger 不知道ai时代的到来，还会不会有人再看博客来学习代码知识了，但对我来说，多记录是让我自己需要的时候多翻看吧😋  我们在编写程序时，难免会遇到错误，而我们在排查错误的时候，可以使用print语句来打印出来我们需要的信息，但是当我们排查完错误时，则需要将print语句删掉，不然人则会打印出来很多不必要的信息，而耽误我们看真正需要的信息。 而logger可以帮助我们控制日志是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="logger用法">
+<meta property="og:url" content="https://bluefatshao.github.io/2026/08/14/logger%E7%94%A8%E6%B3%95/">
+<meta property="og:site_name" content="logger用法">
+<meta property="og:description" content="为什么要使用logger 不知道ai时代的到来，还会不会有人再看博客来学习代码知识了，但对我来说，多记录是让我自己需要的时候多翻看吧😋  我们在编写程序时，难免会遇到错误，而我们在排查错误的时候，可以使用print语句来打印出来我们需要的信息，但是当我们排查完错误时，则需要将print语句删掉，不然人则会打印出来很多不必要的信息，而耽误我们看真正需要的信息。 而logger可以帮助我们控制日志是">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://bluefatshao.github.io/images/avatar.jpg">
+<meta property="article:published_time" content="2026-08-14T09:18:24.000Z">
+<meta property="article:modified_time" content="2026-08-19T07:35:13.031Z">
 <meta property="article:author" content="YP_Shao">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://bluefatshao.github.io/images/avatar.jpg">
+<meta name="twitter:image" content="https://bluefatshao.github.io/images/avatar.jpg"><meta name="twitter:title" content="logger用法">
   
   
-  
+  <meta name="keywords" content="python">
 
   <!-- feed -->
   
@@ -45,10 +48,10 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"https://bluefatshao.github.io","author":{"@type":"Person","name":"YP_Shao","sameAs":[],"image":"https://bluefatshao.github.io/images/avatar.jpg"},"name":"Claireのblog","description":"阅读、科研与音乐","url":"https://bluefatshao.github.io"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"YP_Shao","sameAs":[],"image":"https://bluefatshao.github.io/images/avatar.jpg"},"dateCreated":"2026-08-14T17:18:24+08:00","dateModified":"2026-08-19T15:35:13+08:00","datePublished":"2026-08-14T17:18:24+08:00","description":"","headline":"logger用法","mainEntityOfPage":{"@type":"WebPage","@id":"https://bluefatshao.github.io/2026/08/14/logger%E7%94%A8%E6%B3%95/"},"publisher":{"@type":"Organization","name":"YP_Shao","sameAs":[],"image":"https://bluefatshao.github.io/images/avatar.jpg","logo":{"@type":"ImageObject","url":"https://bluefatshao.github.io/images/avatar.jpg"}},"url":"https://bluefatshao.github.io/2026/08/14/logger%E7%94%A8%E6%B3%95/","keywords":"python","image":[]}</script>
   
 </head>
-<body><div id="l_cover"></div><div class="l_body index" id="start" layout="404" type="undefined" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+<body><div id="l_cover"></div><div class="l_body content" id="start" layout="post" type="story" text-indent><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
 
 
 <header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">Claireのblog</div><div class="sub cap">阅读、科研与生活</div></a></div></header>
@@ -60,35 +63,145 @@
 <div class="widgets">
 <div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
 
+
+
 <widget class="widget-wrapper slide-up recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2026/08/14/logger%E7%94%A8%E6%B3%95/"><span class="title">logger用法</span></a><a class="item title" href="/2026/08/14/%E6%88%91%E4%BB%8E%E5%9F%83%E8%8E%B1%E5%A8%9C%E7%9A%84%E6%95%85%E4%BA%8B%E4%B8%AD%E6%B1%B2%E5%8F%96%E7%9A%84%E5%8A%9B%E9%87%8F/"><span class="title">我从埃莱娜的故事中汲取的力量</span></a><a class="item title" href="/2026/08/09/argparse%E7%94%A8%E6%B3%95/"><span class="title">argparse用法</span></a><a class="item title" href="/2026/08/08/%E8%A7%84%E5%88%99%E7%9A%84%E5%BA%95%E8%89%B2%E6%98%AF%E4%BB%80%E4%B9%88%E2%80%94%E2%80%94%E3%80%8A%E8%A7%84%E5%88%99%E7%9A%84%E6%82%96%E8%AE%BA%E3%80%8B/"><span class="title">职场的底色是什么——《规则的悖论》</span></a></div></widget>
-
-
 </div>
 
 </div></aside><div class="l_main" id="main">
 
 
 
-<article class='md-text error-page'>
-  <h1><img id='error' src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/404/1c830bfcd517d.svg' alt='404'></h1>
-  <p class='what'>
-    <strong>
-      很抱歉，您访问的页面不存在
-    </strong>
-  </p>
-  <p class='why'>
-    可能是输入地址有误或该地址已被删除
-  </p>
-  <br><br>
-  <a class='button' id='back' href="/">返回主页</a>
+
+
+<div class="article banner slide-up top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2026-08-14T09:18:24.000Z">2026-08-14</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-08-19T07:35:13.031Z">2026-08-19</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>logger用法</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content slide-up"><h2 id="为什么要使用logger"><a href="#为什么要使用logger" class="headerlink" title="为什么要使用logger"></a>为什么要使用logger</h2><blockquote>
+<p>不知道ai时代的到来，还会不会有人再看博客来学习代码知识了，但对我来说，多记录是让我自己需要的时候多翻看吧😋</p>
+</blockquote>
+<p>我们在编写程序时，难免会遇到错误，而我们在排查错误的时候，可以使用<code>print</code>语句来打印出来我们需要的信息，但是当我们排查完错误时，则需要将<code>print</code>语句删掉，不然人则会打印出来很多不必要的信息，而耽误我们看真正需要的信息。</p>
+<p>而logger可以帮助我们控制日志是否输出，使用一个语句的开关来决定是否要输出需要的日志。</p>
+<h2 id="用法示例"><a href="#用法示例" class="headerlink" title="用法示例"></a>用法示例</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line"></span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line">logging.basicConfig(</span><br><span class="line">		level=logging.INFO,</span><br><span class="line">		format=&quot;%(asctime)s | %(levelname)s | %(name)s | %(message)s&quot;)</span><br><span class="line"></span><br><span class="line">logging.debug(&quot;调试信息&quot;)</span><br><span class="line">logging.info(&quot;程序正常运行&quot;)</span><br><span class="line">logging.warning(&quot;可能存在问题&quot;)</span><br><span class="line">logging.error(&quot;发生错误&quot;)</span><br><span class="line">logging.critical(&quot;严重错误&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>这里面日志的级别为<code>DEBUG &lt; INFO &lt; WARNING &lt; ERROR &lt; CRITICAL</code></p>
+<h3 id="logging-getLogger-name-是什么意思"><a href="#logging-getLogger-name-是什么意思" class="headerlink" title="logging.getLogger(__name__)是什么意思"></a><code>logging.getLogger(__name__)</code>是什么意思</h3><p>我们在刚开始使用时，可以用<code>logger = logging.getLogger(__name__)</code>来获取一个Logger，括号里传的是这个Logger的名字。而<code>__name__</code>是Python自动提供的特殊变量，不需要定义，它表示<strong>当前Python模块的名字</strong>。</p>
+<p>例如项目结构是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Project/</span><br><span class="line">	app/</span><br><span class="line">		user/</span><br><span class="line">			service.py</span><br></pre></td></tr></table></figure>
+
+<p>那么<code>__name__</code>可能是：<code>app.user.service</code>。即文件被直接执行：<code>__name__ == &quot;__main__&quot;</code>，文件被其他文件导入：<code>__name__</code> 通常是它的模块名。</p>
+<h3 id="basicConfig-是做什么的"><a href="#basicConfig-是做什么的" class="headerlink" title="basicConfig()是做什么的"></a><code>basicConfig()</code>是做什么的</h3><p>它是用来配置日志系统的，可以理解为从现在开始，日志最低显示到什么级别，以及每条日志按照什么格式打印。例如<code>logging.basicConfig(level=logging.INFO)</code>表示该日志的级别为<code>INFO</code>，它不是在定义某一条日志为<code>INFO</code>，而是在设置一个过滤门槛，只输出级别大于等于<code>INFO</code>的日志。</p>
+<h3 id="format中的asctime-levelname-name-message分别是什么"><a href="#format中的asctime-levelname-name-message分别是什么" class="headerlink" title="format中的asctime, levelname, name, message分别是什么"></a><code>format</code>中的<code>asctime, levelname, name, message</code>分别是什么</h3><p>这个不是我们定义的，是由<code>logging</code>自动生成的。每当我们写<code>logger.info(&quot;服务启动成功&quot;)</code>，<code>logging</code>都会在内部创建一条日志记录，其中自动包含时间、日志级别、Logger名字和消息等信息，这就是这四个字段所表示的含义。</p>
+<h2 id="需要注意的事项"><a href="#需要注意的事项" class="headerlink" title="需要注意的事项"></a>需要注意的事项</h2><h3 id="推荐使用参数占位"><a href="#推荐使用参数占位" class="headerlink" title="推荐使用参数占位"></a>推荐使用参数占位</h3><p>如<code>logger.info(&quot;用户 %s 登录，尝试次数：%d&quot;, username, count)</code>，而不是f-string。虽然这样写也可以运行：<code>logger.info(f&quot;用户 {username} 登录&quot;)</code>，但占位符写法只有日志真正需要输出时才会格式化，性能更好。</p>
+<h3 id="记录异常"><a href="#记录异常" class="headerlink" title="记录异常"></a>记录异常</h3><ol>
+<li><p>先使用<code>try...except</code>来收集错误例如<code>result = 10 / 0</code>，而除数不能是0，所以Python会产生一个<code>ZeroDivisionError</code>异常。</p>
+</li>
+<li><p>如果使用诸如一下的用法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">	result = 10 / 0</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">	logger.exception(&quot;计算失败&quot;, exc_info=True)</span><br></pre></td></tr></table></figure>
+
+<p>而<code>logger.exception()</code>的本质是一条ERROR级别的日志。它相当于<code>logger.error(&quot;计算失败&quot;, exc_info=True)</code></p>
+</li>
+<li><p><code>logger.error()</code>和<code>logger.exception()</code>的区别在于，不仅会输出消息，还会自动输出异常类型、错误原因和错误发生的位置。<code>exc_info=True</code>的意思是把当前捕获到的异常信息也打印出来。</p>
+</li>
+<li><p>它和<code>level=logging.INFO</code>不会冲突，假如配置是：<code>logging.basicConfig(level=logging.INFO)</code>，它表示输出<code>INFO</code>以及更高级别的日志，由于<code>logger.exception()</code>输入<code>ERROR</code>级别，而<code>ERROR &gt; INFO</code>，所以它会输出。</p>
+</li>
+</ol>
+<h3 id="可以将日志输送到不同地方并设置不同的日志门槛"><a href="#可以将日志输送到不同地方并设置不同的日志门槛" class="headerlink" title="可以将日志输送到不同地方并设置不同的日志门槛"></a>可以将日志输送到不同地方并设置不同的日志门槛</h3><p>例如，我们先创建Logger：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">logger = logging.getLogger(&quot;typhoon_analysis&quot;) # 先创建一个名为typhoon_analysis的Logger,所以日志格式中的%(name)%会显示typhoon_analysis</span><br><span class="line">logger.setLevel(logging.DEBUG) # 设置Logger的最低处理级别是DEBUG</span><br></pre></td></tr></table></figure>
+
+<p>然后我们创建日志格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">formatter = logging.Formatter(</span><br><span class="line">    &quot;%(asctime)s | %(levelname)s | %(name)s | %(message)s&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>这里规定每条日志的显示方式是时间｜日志级别｜Logger名字｜日志内容。</p>
+<p>接下来我们创建一个<strong>终端Handler</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console_handler = logging.StreamHandler() # StreamHandler通常负责将日志输出到终端</span><br><span class="line">console_handler.setLevel(logging.INFO) # 设置终端的最低日志级别为INFO</span><br></pre></td></tr></table></figure>
+
+<p>然后我们把刚刚创建的格式交给终端Handler:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console_handler.setFormatter(formatter) # 终端输出日志时，按照formatter规定的格式显示</span><br></pre></td></tr></table></figure>
+
+<p>然后我们再创建一个<strong>文件Handler</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file_handler = logging.FileHandler(&quot;ty-track.log&quot;, encoding=&quot;utf-8&quot;) # 这表示创建一个文件输出器,将日志写入ty-track</span><br></pre></td></tr></table></figure>
+
+<p>如果文件<code>ty-track.log</code>不存在，程序会自动创建它。</p>
+<p>接下来，我们设置文件的最低日志级别是<code>DEBUG</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file_handler.setLevel(logging.DEBUG)</span><br></pre></td></tr></table></figure>
+
+<p>设置文件中的日志格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file_handler.setFormatter(formatter)</span><br></pre></td></tr></table></figure>
+
+<p>最后关键的一步，我们刚开始设置的Logger还没有用到，所以现在我们把两个Handler安装到Logger上：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">logger.addHandler(console_handler)</span><br><span class="line">logger.addHandler(file_handler)</span><br></pre></td></tr></table></figure>
+
+<p>现在我们的一条日志会同时被交给两个 Handler，然后两个 Handler 分别按照自己的级别决定是否输出。🥳</p>
+<h3 id="当我们添加多个Handler时，导致一条日志打印多次，我们应该怎么办？"><a href="#当我们添加多个Handler时，导致一条日志打印多次，我们应该怎么办？" class="headerlink" title="当我们添加多个Handler时，导致一条日志打印多次，我们应该怎么办？"></a>当我们添加多个Handler时，导致一条日志打印多次，我们应该怎么办？</h3><blockquote>
+<p>如果初始化函数可能执行多次，重复添加Handler可能会导致一条日志打印很多次，或者说我们同一个Logger被重复添加了多个Handler，日志又被传递给了根Logger，再打印一次</p>
+</blockquote>
+<h4 id="添加多个Handler的情况"><a href="#添加多个Handler的情况" class="headerlink" title="添加多个Handler的情况"></a>添加多个Handler的情况</h4><p>首先，我们先考虑一下，为什么重复添加Handler会重复输出？假如我们写一个创建Logger的函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def create_logger():</span><br><span class="line">    logger = logging.getLogger(&quot;typhoon_analysis&quot;)</span><br><span class="line">    logger.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">    handler = logging.StreamHandler()</span><br><span class="line">    logger.addHandler(handler)</span><br><span class="line"></span><br><span class="line">    return logger</span><br></pre></td></tr></table></figure>
+
+<p>然后调用两次：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">logger1 = create_logger()</span><br><span class="line">logger2 = create_logger()</span><br><span class="line"></span><br><span class="line">logger2.info(&quot;程序启动&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>这里虽然调用了两次函数，但是实际上<code>logging.getLogger(&quot;typhoon_analysis&quot;)</code>每次使用都是相同的名字，获取的都是同一个Logger对象。</p>
+<p>而我们在第一次调用<code>create_logger()</code>时，给它添加了一个Handler，第二次调用时，又添加了一个，所以当我们执行<code>logger.info(&quot;程序启动&quot;)</code>，两个Handler都会输出这条日志，终端就会出现两遍：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">程序启动</span><br><span class="line">程序启动</span><br></pre></td></tr></table></figure>
+
+<p>那我们应该怎么解决呢？当我们改成如下情况：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def create_logger():</span><br><span class="line">    logger = logging.getLogger(&quot;typhoon_analysis&quot;)</span><br><span class="line">    logger.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">    if not logger.handlers:</span><br><span class="line">        handler = logging.StreamHandler()</span><br><span class="line">        logger.addHandler(handler)</span><br><span class="line"></span><br><span class="line">    return logger</span><br></pre></td></tr></table></figure>
+
+<p>当我们判断<code>if not logger.handlers</code>的时候，这里<code>logger.handlers</code>是当前Logger已经拥有的Handler列表。请注意，<code>if not logger.handlers:</code> 相当于<code>if len(logger.handlers) == 0:</code>它的意思是<strong>如果这个Logger一个Handler都没有，就执行下面的代码</strong>。</p>
+<p>当我们第一次调用的时候，列表是空的，<code>logger.handlers == []</code>，所以：<code>not logger.handlers</code>结果是<code>True</code>，程序将会添加Handler：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">handler = logging.StreamHandler()</span><br><span class="line">logger.addHandler(handler)</span><br></pre></td></tr></table></figure>
+
+<p>当我们第二次调用的时候，Logger已经有Handler了：<code>logger.handlers == [某个Handler]</code>，此时：<code>not logger.handlers</code>结果是<code>False</code>，所以不会再次添加。</p>
+<h4 id="“向上传播”的情况"><a href="#“向上传播”的情况" class="headerlink" title="“向上传播”的情况"></a>“向上传播”的情况</h4><p>OK，我们目前已经学习了这种日志会重复的情况，在Logger学习中，还有一种情况是“向上传播”导致的日志重复打印。</p>
+<p>在<code>Python</code>的日志系统中，有一个特殊的Logger，叫做根Logger，也叫做<code>root logger</code>。在我们之前使用<code>logging.basicConfig(...)</code>，就是在配置根Logger。</p>
+<p>假设我们先配置了根Logger：<code>logging.basicConfig(level=logging.INFO)</code>，然后又给自己<code>typhoon_analysis</code>添加了一个Handler：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">logger = logging.getLogger(&quot;typhoon_analysis&quot;)</span><br><span class="line">logger.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">handler = logging.StreamHandler()</span><br><span class="line">logger.addHandler(handler)</span><br></pre></td></tr></table></figure>
+
+<p>现在我们执行：<code>logger.info(&quot;程序启动&quot;)</code>，这条日志会先经过自己的Handler，即<code>typhoon_analysis</code>，再继续传给<code>root Logger</code>，于是我们在终端可能会看到：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">程序启动</span><br><span class="line">INFO:typhoon_analysis:程序启动</span><br></pre></td></tr></table></figure>
+
+<p>内容格式虽然不同，但是这是同一条日志。这是因为**Logger默认会把日志继续向上交给它的父Logger，最终到达根Logger。**这个过程叫做“传播”，对应属性是<code>logger.propagate</code>。</p>
+<p>如果我们设置：<code>logger.propagate=False</code>，这个意思表明，这条日志由<code>typhoon_analysis</code>处理完以后，不会再上传给上层Logger。</p>
 </article>
+<div class="article-footer slide-up">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+</div>
+
+<div class="related-wrap slide-up" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2026/08/14/%E6%88%91%E4%BB%8E%E5%9F%83%E8%8E%B1%E5%A8%9C%E7%9A%84%E6%95%85%E4%BA%8B%E4%B8%AD%E6%B1%B2%E5%8F%96%E7%9A%84%E5%8A%9B%E9%87%8F/">我从埃莱娜的故事中汲取的力量</a></div></section></div>
+
+
 
 
 
 
 <footer class="page-footer slide-up footnote"><hr><div class="text"><p>本站由 <a href="/">YP_Shao</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.37.0">Stellar 1.37.0</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
-<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right"></aside><div class='float-panel'>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right"><div class="widgets">
+
+
+
+<widget class="widget-wrapper slide-up toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8logger"><span class="toc-text">为什么要使用logger</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="toc-text">用法示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#logging-getLogger-name-%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D"><span class="toc-text">logging.getLogger(__name__)是什么意思</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#basicConfig-%E6%98%AF%E5%81%9A%E4%BB%80%E4%B9%88%E7%9A%84"><span class="toc-text">basicConfig()是做什么的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#format%E4%B8%AD%E7%9A%84asctime-levelname-name-message%E5%88%86%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">format中的asctime, levelname, name, message分别是什么</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%BA%8B%E9%A1%B9"><span class="toc-text">需要注意的事项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8%E5%8F%82%E6%95%B0%E5%8D%A0%E4%BD%8D"><span class="toc-text">推荐使用参数占位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E5%BC%82%E5%B8%B8"><span class="toc-text">记录异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E4%BB%A5%E5%B0%86%E6%97%A5%E5%BF%97%E8%BE%93%E9%80%81%E5%88%B0%E4%B8%8D%E5%90%8C%E5%9C%B0%E6%96%B9%E5%B9%B6%E8%AE%BE%E7%BD%AE%E4%B8%8D%E5%90%8C%E7%9A%84%E6%97%A5%E5%BF%97%E9%97%A8%E6%A7%9B"><span class="toc-text">可以将日志输送到不同地方并设置不同的日志门槛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%93%E6%88%91%E4%BB%AC%E6%B7%BB%E5%8A%A0%E5%A4%9A%E4%B8%AAHandler%E6%97%B6%EF%BC%8C%E5%AF%BC%E8%87%B4%E4%B8%80%E6%9D%A1%E6%97%A5%E5%BF%97%E6%89%93%E5%8D%B0%E5%A4%9A%E6%AC%A1%EF%BC%8C%E6%88%91%E4%BB%AC%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F"><span class="toc-text">当我们添加多个Handler时，导致一条日志打印多次，我们应该怎么办？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%A4%9A%E4%B8%AAHandler%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-text">添加多个Handler的情况</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%9C%E5%90%91%E4%B8%8A%E4%BC%A0%E6%92%AD%E2%80%9D%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-text">“向上传播”的情况</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
   </button>
@@ -101,7 +214,7 @@
 
 <script type="text/javascript">
   window.canonical = {"closeEnable":true,"closeText":"关闭提示","originalHost":null,"officialHosts":["localhost"],"encoded":""};
-  window.canonical["param"] = {"permalink":null,"checklink":"/js/plugins/video.js"};
+  window.canonical["param"] = {"permalink":"https://bluefatshao.github.io/2026/08/14/logger%E7%94%A8%E6%B3%95/","checklink":"/js/plugins/video.js"};
   // Fix: Ensure page is at the correct top position on data load
   if (history.scrollRestoration) {
     history.scrollRestoration = 'auto';
