@@ -17,25 +17,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
-  <title>我从埃莱娜的故事中汲取的力量 - Claireのblog</title>
+  <title>grep & awk 的用法 - Claireのblog</title>
 
-  <meta name="description" content="感谢作者，感谢译者陈英，让我在四本书中不断汲取力量，并跟随主人公不断成长  作者在纵向上以埃莱娜成长的时间线为主线，在横向上以她身边朋友的成长经历与她个人的经历做对比，以发现读书对女生成长的巨大作用。 我在读第一本书的时候，还并不能完全带入故事中，我以为这本书是两个女生在相处时互相的爱与嫉妒的情绪交织。在埃莱娜可以继续上学时，莉拉却不能继续上学，莉拉让埃莱娜独自往前走了很久，想让她也放弃读书的想">
+  <meta name="description" content="管道和grep是什么我们在用Shell的时候，会用到｜，这个是管道，它可以把前一个命令显示出来的结果，直接交给后一个命令继续处理。 而grep是用于找出包含指定模式的行。例如，当我们有一个observations.txt的文本，里面包含的数据是： 12345678910station date temp wind precip weatherBeijing 2026-08-01 31.2 3.5">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我从埃莱娜的故事中汲取的力量">
-<meta property="og:url" content="https://bluefatshao.github.io/2026/08/14/%E6%88%91%E4%BB%8E%E5%9F%83%E8%8E%B1%E5%A8%9C%E7%9A%84%E6%95%85%E4%BA%8B%E4%B8%AD%E6%B1%B2%E5%8F%96%E7%9A%84%E5%8A%9B%E9%87%8F/">
-<meta property="og:site_name" content="我从埃莱娜的故事中汲取的力量">
-<meta property="og:description" content="感谢作者，感谢译者陈英，让我在四本书中不断汲取力量，并跟随主人公不断成长  作者在纵向上以埃莱娜成长的时间线为主线，在横向上以她身边朋友的成长经历与她个人的经历做对比，以发现读书对女生成长的巨大作用。 我在读第一本书的时候，还并不能完全带入故事中，我以为这本书是两个女生在相处时互相的爱与嫉妒的情绪交织。在埃莱娜可以继续上学时，莉拉却不能继续上学，莉拉让埃莱娜独自往前走了很久，想让她也放弃读书的想">
+<meta property="og:title" content="grep &amp; awk 的用法">
+<meta property="og:url" content="https://bluefatshao.github.io/2026/08/24/%E7%AE%A1%E9%81%93%E5%92%8Cgrep/">
+<meta property="og:site_name" content="grep &amp; awk 的用法">
+<meta property="og:description" content="管道和grep是什么我们在用Shell的时候，会用到｜，这个是管道，它可以把前一个命令显示出来的结果，直接交给后一个命令继续处理。 而grep是用于找出包含指定模式的行。例如，当我们有一个observations.txt的文本，里面包含的数据是： 12345678910station date temp wind precip weatherBeijing 2026-08-01 31.2 3.5">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://bluefatshao.github.io/images/avatar.jpg">
-<meta property="article:published_time" content="2026-08-14T03:53:51.000Z">
-<meta property="article:modified_time" content="2026-08-14T09:14:36.890Z">
+<meta property="article:published_time" content="2026-08-24T02:52:03.000Z">
+<meta property="article:modified_time" content="2026-08-25T08:07:21.456Z">
 <meta property="article:author" content="YP_Shao">
-<meta property="article:tag" content="阅读">
+<meta property="article:tag" content="Shell">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://bluefatshao.github.io/images/avatar.jpg"><meta name="twitter:title" content="我从埃莱娜的故事中汲取的力量">
+<meta name="twitter:image" content="https://bluefatshao.github.io/images/avatar.jpg"><meta name="twitter:title" content="grep &amp; awk 的用法">
   
   
-  <meta name="keywords" content="阅读">
+  <meta name="keywords" content="Shell">
 
   <!-- feed -->
   
@@ -48,7 +48,7 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"YP_Shao","sameAs":[],"image":"https://bluefatshao.github.io/images/avatar.jpg"},"dateCreated":"2026-08-14T11:53:51+08:00","dateModified":"2026-08-14T17:14:36+08:00","datePublished":"2026-08-14T11:53:51+08:00","description":"","headline":"我从埃莱娜的故事中汲取的力量","mainEntityOfPage":{"@type":"WebPage","@id":"https://bluefatshao.github.io/2026/08/14/%E6%88%91%E4%BB%8E%E5%9F%83%E8%8E%B1%E5%A8%9C%E7%9A%84%E6%95%85%E4%BA%8B%E4%B8%AD%E6%B1%B2%E5%8F%96%E7%9A%84%E5%8A%9B%E9%87%8F/"},"publisher":{"@type":"Organization","name":"YP_Shao","sameAs":[],"image":"https://bluefatshao.github.io/images/avatar.jpg","logo":{"@type":"ImageObject","url":"https://bluefatshao.github.io/images/avatar.jpg"}},"url":"https://bluefatshao.github.io/2026/08/14/%E6%88%91%E4%BB%8E%E5%9F%83%E8%8E%B1%E5%A8%9C%E7%9A%84%E6%95%85%E4%BA%8B%E4%B8%AD%E6%B1%B2%E5%8F%96%E7%9A%84%E5%8A%9B%E9%87%8F/","keywords":"阅读","image":[]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"YP_Shao","sameAs":[],"image":"https://bluefatshao.github.io/images/avatar.jpg"},"dateCreated":"2026-08-24T10:52:03+08:00","dateModified":"2026-08-25T16:07:21+08:00","datePublished":"2026-08-24T10:52:03+08:00","description":"","headline":"grep & awk 的用法","mainEntityOfPage":{"@type":"WebPage","@id":"https://bluefatshao.github.io/2026/08/24/%E7%AE%A1%E9%81%93%E5%92%8Cgrep/"},"publisher":{"@type":"Organization","name":"YP_Shao","sameAs":[],"image":"https://bluefatshao.github.io/images/avatar.jpg","logo":{"@type":"ImageObject","url":"https://bluefatshao.github.io/images/avatar.jpg"}},"url":"https://bluefatshao.github.io/2026/08/24/%E7%AE%A1%E9%81%93%E5%92%8Cgrep/","keywords":"Shell","image":[]}</script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 </head>
 <body><div id="l_cover"></div><div class="l_body content" id="start" layout="post" type="story" text-indent><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
@@ -78,23 +78,120 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2026-08-14T03:53:51.000Z">2026-08-14</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-08-14T09:14:36.890Z">2026-08-14</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2026-08-24T02:52:03.000Z">2026-08-24</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-08-25T08:07:21.456Z">2026-08-25</time></span></div></div></div>
     
     <div class="bottom only-title">
       
       <div class="text-area">
-        <h1 class="text title"><span>我从埃莱娜的故事中汲取的力量</span></h1>
+        <h1 class="text title"><span>grep & awk 的用法</span></h1>
         
       </div>
     </div>
     
   </div>
-  </div><article class="md-text content slide-up"><blockquote>
-<p>感谢作者，感谢译者陈英，让我在四本书中不断汲取力量，并跟随主人公不断成长</p>
-</blockquote>
-<p>作者在纵向上以埃莱娜成长的时间线为主线，在横向上以她身边朋友的成长经历与她个人的经历做对比，以发现读书对女生成长的巨大作用。</p>
-<p>我在读第一本书的时候，还并不能完全带入故事中，我以为这本书是两个女生在相处时互相的爱与嫉妒的情绪交织。在埃莱娜可以继续上学时，莉拉却不能继续上学，莉拉让埃莱娜独自往前走了很久，想让她也放弃读书的想法；而她们又将彼此的布娃娃扔到洞里…，许多这样细致的描述，可以见得作者对女性的描述有多细腻。</p>
-<p>而主人公埃莱娜是一个非常爱她的女朋友莉拉的人。她知道莉拉在小学期间就具有极高的数学天赋，也具有很好的文学素养，她一直保留着莉拉</p>
+  </div><article class="md-text content slide-up"><h2 id="管道和grep是什么"><a href="#管道和grep是什么" class="headerlink" title="管道和grep是什么"></a>管道和grep是什么</h2><p>我们在用Shell的时候，会用到｜，这个是管道，它可以把前一个命令显示出来的结果，直接交给后一个命令继续处理。</p>
+<p>而<code>grep</code>是用于找出包含指定模式的行。例如，当我们有一个observations.txt的文本，里面包含的数据是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">station date temp wind precip weather</span><br><span class="line">Beijing 2026-08-01 31.2 3.5 0.0 CLEAR</span><br><span class="line">Shanghai 2026-08-01 29.4 4.2 12.5 RAIN</span><br><span class="line">Guangzhou 2026-08-01 33.1 2.8 5.0 RAIN</span><br><span class="line">Beijing 2026-08-02 30.5 6.1 18.2 STORM</span><br><span class="line">Shanghai 2026-08-02 28.7 3.9 0.0 CLOUDY</span><br><span class="line">Guangzhou 2026-08-02 34.0 2.1 0.0 CLEAR</span><br><span class="line">Beijing 2026-08-03 32.0 2.7 0.0 CLEAR</span><br><span class="line">Shanghai 2026-08-03 27.9 5.5 22.1 STORM</span><br><span class="line">Guangzhou 2026-08-03 32.8 3.0 8.4 RAIN</span><br></pre></td></tr></table></figure>
+
+<p>当我们用<code>grep &#39;Beijing&#39; observations.txt</code>时，筛选出来的结果是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Beijing 2026-08-01 31.2 3.5 0.0 CLEAR</span><br><span class="line">Beijing 2026-08-02 30.5 6.1 18.2 STORM</span><br><span class="line">Beijing 2026-08-03 32.0 2.7 0.0 CLEAR</span><br></pre></td></tr></table></figure>
+
+<p>可以看到我们将所有包含<code>Beijing</code>的行筛选了出来。</p>
+<p>当我们用<code>grep &#39;RAIN&#39; observations.txt</code>时，得到的结果是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Shanghai 2026-08-01 29.4 4.2 12.5 RAIN</span><br><span class="line">Guangzhou 2026-08-01 33.1 2.8 5.0 RAIN</span><br><span class="line">Guangzhou 2026-08-03 32.8 3.0 8.4 RAIN</span><br></pre></td></tr></table></figure>
+
+<p>我们将所有包含<code>RAIN</code>的<strong>行</strong>筛选了出来。</p>
+<p>所以这里我们就能知道了，<code>grep</code>的基本用法就是，<strong>从文本中找出包含指定字符串或者模式的行</strong>。</p>
+<h3 id="grep-功能汇总"><a href="#grep-功能汇总" class="headerlink" title="grep 功能汇总"></a>grep 功能汇总</h3><table>
+<thead>
+<tr>
+<th align="center"><code>-i</code></th>
+<th align="center">忽略大小写</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>-n</code></td>
+<td align="center">显示行号</td>
+</tr>
+<tr>
+<td align="center"><code>-v</code></td>
+<td align="center">反向匹配</td>
+</tr>
+<tr>
+<td align="center"><code>-E</code></td>
+<td align="center">使用扩展正则表达式</td>
+</tr>
+<tr>
+<td align="center"><code>-c</code></td>
+<td align="center">直接统计匹配行数</td>
+</tr>
+<tr>
+<td align="center"><code>-r</code></td>
+<td align="center">递归搜索目录</td>
+</tr>
+<tr>
+<td align="center"><code>-l</code></td>
+<td align="center">只显示匹配的文件名</td>
+</tr>
+</tbody></table>
+<p>下面展示几个示例。</p>
+<h4 id="grep忽略大小写"><a href="#grep忽略大小写" class="headerlink" title="grep忽略大小写"></a>grep忽略大小写</h4><p>需要注意的是，<strong><code>grep</code>是默认区分大小写的</strong>，<code>RAIN</code>和<code>rain</code>默认是不同的，如果想忽略大小写，可以使用-i，例如<code>grep -i &#39;rain&#39; observations.txt</code>。</p>
+<h4 id="grep同时满足两个条件"><a href="#grep同时满足两个条件" class="headerlink" title="grep同时满足两个条件"></a>grep同时满足两个条件</h4><p>如果想同时搜索包含<code>Beijing</code>和<code>RAIN</code>的行，可以使用管道：<code>grep &#39;Beijing&#39; observations.txt | grep &#39;RAIN&#39;</code>。我们刚刚提到，管道是**“将前一个命令处理后的结果，交给后一个命令继续处理”**，所以我们现在的处理流程就是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">原始文件</span><br><span class="line">   ↓ grep &#x27;Beijing&#x27;</span><br><span class="line">只剩包含 Beijing 的行</span><br><span class="line">   ↓ grep &#x27;RAIN&#x27;</span><br><span class="line">只剩同时包含 RAIN 的行</span><br></pre></td></tr></table></figure>
+
+<h4 id="grep显示行号"><a href="#grep显示行号" class="headerlink" title="grep显示行号"></a>grep显示行号</h4><p>如果我们想显示grep输出内容对应的行号，我们使用<code>grep -n &#39;STORM&#39; observations.txt</code>，我们会得到输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">5:Beijing 2026-08-02 30.5 6.1 18.2 STORM</span><br><span class="line">9:Shanghai 2026-08-03 27.9 5.5 22.1 STORM</span><br></pre></td></tr></table></figure>
+
+<h4 id="grep-反向筛选"><a href="#grep-反向筛选" class="headerlink" title="grep 反向筛选"></a>grep 反向筛选</h4><p>当我们使用<code>grep -v &#39;CLEAR&#39; observations.txt</code>，得到的结果是排除所有晴天的记录，因为<code>-v</code>是保留不匹配<code>CLEAR</code>的行。另外，当我们使用<code>grep -v &#39;^station&#39; observations.txt</code>时，这里<code>^</code>代表行首，所以它不是排除所有包含<code>station</code>的行，而是<strong>排除以<code>station</code>开头的行</strong>。</p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>正则表达式需要与Shell通配符来共同学习区分，我们经常使用的Shell通常由Shell (Zsh) 来解释，而正则表达式通常由<code>grep</code>、<code>sed</code>、<code>awk</code>等程序解释。在使用正则表达式时，我们通常<strong>加上引号</strong>，这是因为，引号的作用是告诉Shell：不要处理这里面的特殊字符，把他们原样交给<code>grep</code>。</p>
+<p>我们接下来先来学习几个正则表达式的方法：</p>
+<h3 id="行首-和行尾"><a href="#行首-和行尾" class="headerlink" title="行首^和行尾$"></a>行首<code>^</code>和行尾<code>$</code></h3><p>我们通过这种方法可以来查找对应行首和行尾的行，例如查找以<code>Beijing</code>开头的行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &#x27;^Beijing&#x27; observations.txt</span><br></pre></td></tr></table></figure>
+
+<p>查找以<code>STORM</code>结尾的行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &#x27;STORM$&#x27; observations.txt</span><br></pre></td></tr></table></figure>
+
+<p>同时限制行首和行尾：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -E &#x27;^Shanghai.*STORM$&#x27; observations.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="表示任意单个字符"><a href="#表示任意单个字符" class="headerlink" title=".表示任意单个字符"></a><code>.</code>表示任意单个字符</h3><p>在正则表达式中，<code>.</code>表示<strong>任意一个字符</strong>。例如我们在查找时：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &#x27;2026.08.01&#x27; observations.txt</span><br></pre></td></tr></table></figure>
+
+<p>它能够匹配<code>2026-08-01</code></p>
+<p>所以我们一般如果确实要匹配普通小数点，需要转义<code>\.</code>。</p>
+<p>例如筛选包含<code>31.2</code>的行:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &#x27;31\.2&#x27; observations.txt</span><br></pre></td></tr></table></figure>
+
+<p>如果我们不这样写，而是写成：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &#x27;31.2&#x27; observations.txt</span><br></pre></td></tr></table></figure>
+
+<p>可能会匹配到：<code>31-2</code>，<code>31A2</code>等。</p>
+<h3 id="表示一个字符重复零次或者多次"><a href="#表示一个字符重复零次或者多次" class="headerlink" title="*表示一个字符重复零次或者多次"></a><code>*</code>表示一个字符重复零次或者多次</h3><p>举一个简单的例子：<code>A*</code>可以表示<code>空字符串、A、AA、AAA...</code>，而比较常用的<code>.*</code>可以表示<strong>任意字符出现零次或者多次</strong>。</p>
+<p>所以说：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -E &#x27;^Beijing.*STORM$&#x27; observations.txt</span><br></pre></td></tr></table></figure>
+
+<p>表示<strong>Beijing + 中间任意内容 + STORM</strong></p>
+<p>其余的我先不写了，使用的时候再查吧，<del>因为懒的写了</del>，这个实际上还是需要多用啊。</p>
+<h2 id="awk是什么"><a href="#awk是什么" class="headerlink" title="awk是什么"></a><code>awk</code>是什么</h2><p>当我们需要按行来筛选的时候，使用<code>grep</code>是比较合适的，但当我们需要按列来筛选的话，使用<code>awk</code>就更加方便了。</p>
+<p>我们先来拆解一下我们的文件内容，正如本篇博客开始的，我们的文件每一行有六列：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$1         $2          $3    $4    $5       $6</span><br><span class="line">station    date         temp  wind  precip   weather</span><br><span class="line">Beijing    2026-08-01   31.2  3.5   0.0      CLEAR</span><br></pre></td></tr></table></figure>
+
+<p>我来记录几个比较实用的吧，<del>全部的估计我也记不完</del>，后面慢慢补充。</p>
+<h3 id="跳过标题行"><a href="#跳过标题行" class="headerlink" title="跳过标题行"></a>跳过标题行</h3><p>在<code>awk</code>中，<code>NR</code>表示当前记录的行号，如果我们要跳过标题行，打印需要的内容的话，可以类似这样写：<code>awk &#39;NR &gt; 1 {print $1, $3}&#39; observations.txt</code>，这表明，我们跳过第一行开始打印，并且打印第1列和第3列。</p>
+<h3 id="按数值筛选"><a href="#按数值筛选" class="headerlink" title="按数值筛选"></a>按数值筛选</h3><p>找出温度超过32°C的记录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk &#x27;NR &gt; 1 &amp;&amp; $3 &gt; 32 &#123;print $1, $2, $3&#125;&#x27; observations.txt</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，这里面NR &gt; 1代表跳过标题，&amp;&amp; 代表并且，$3 &gt; 32代表第三列温度大于32。</p>
+<p>除此之外，我们还可以学一些新的逻辑方法：在<code>awk</code>中，&#x3D; 表示赋值，&#x3D;&#x3D; 表示判断是否相等，|| 表示或者，!&#x3D; 表示不等于。</p>
+<p>需要注意的是，<code>awk</code>应该使用单引号，不要使用双引号。而且，我们的一般写法是：<strong><code>awk &#39;条件 {动作}&#39; 文件</code></strong>，并且<code>&amp;&amp;</code><strong>只能连接条件，不能连接条件和动作</strong>。</p>
+<p>我们举一个例子，计算总降水量：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk &#x27;NR &gt; 1 &#123;total += $5&#125; END &#123;print &quot;总降水量:&quot;, total, &quot;mm&quot;&#125;&#x27; observations.txt</span><br></pre></td></tr></table></figure>
+
+<p>这里<code>NR &gt; 1</code>是条件，而<code>{total += $5}</code>是动作，用来计算的，<code>awk</code>会对每一行执行：<code>total += $5</code>，但在执行过程中，不会自动显示变量，文件读取完毕后，<code>END</code>才负责输出结果。</p>
+<p>好，我们再总结一遍，在使用时，我们用**<code>awk &#39;条件 {动作}&#39; 文件</code>**，需要注意的是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AWK 程序通常放在单引号里</span><br><span class="line">字段用 $1、$2、$3 表示</span><br><span class="line">多个输出字段之间使用逗号</span><br><span class="line">&amp;&amp; 只能连接多个判断条件</span><br><span class="line">END 用于最终统计输出</span><br></pre></td></tr></table></figure>
+
+<p>但是实际使用过程中，还是多用多查为好。</p>
 </article>
 <div class="article-footer slide-up">
     <section id="license">
@@ -106,7 +203,7 @@
 
 </div>
 
-<div class="related-wrap slide-up" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2026/08/14/logger%E7%94%A8%E6%B3%95/">logger用法</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2026/08/09/argparse%E7%94%A8%E6%B3%95/">argparse用法</a></div></section></div>
+<div class="related-wrap slide-up" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2026/08/19/pathlib%E7%94%A8%E6%B3%95%E6%8C%87%E5%8C%97/">pathlib用法指北</a></div></section></div>
 
 
 
@@ -117,7 +214,7 @@
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right"><div class="widgets">
 
-<widget class="widget-wrapper slide-up toc" id="data-toc" collapse="false"><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
+<widget class="widget-wrapper slide-up toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%A1%E9%81%93%E5%92%8Cgrep%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">管道和grep是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#grep-%E5%8A%9F%E8%83%BD%E6%B1%87%E6%80%BB"><span class="toc-text">grep 功能汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#grep%E5%BF%BD%E7%95%A5%E5%A4%A7%E5%B0%8F%E5%86%99"><span class="toc-text">grep忽略大小写</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#grep%E5%90%8C%E6%97%B6%E6%BB%A1%E8%B6%B3%E4%B8%A4%E4%B8%AA%E6%9D%A1%E4%BB%B6"><span class="toc-text">grep同时满足两个条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#grep%E6%98%BE%E7%A4%BA%E8%A1%8C%E5%8F%B7"><span class="toc-text">grep显示行号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#grep-%E5%8F%8D%E5%90%91%E7%AD%9B%E9%80%89"><span class="toc-text">grep 反向筛选</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E9%A6%96-%E5%92%8C%E8%A1%8C%E5%B0%BE"><span class="toc-text">行首^和行尾$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E7%A4%BA%E4%BB%BB%E6%84%8F%E5%8D%95%E4%B8%AA%E5%AD%97%E7%AC%A6"><span class="toc-text">.表示任意单个字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E7%A4%BA%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E9%87%8D%E5%A4%8D%E9%9B%B6%E6%AC%A1%E6%88%96%E8%80%85%E5%A4%9A%E6%AC%A1"><span class="toc-text">*表示一个字符重复零次或者多次</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#awk%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">awk是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%B3%E8%BF%87%E6%A0%87%E9%A2%98%E8%A1%8C"><span class="toc-text">跳过标题行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E6%95%B0%E5%80%BC%E7%AD%9B%E9%80%89"><span class="toc-text">按数值筛选</span></a></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
 </div></aside><div class='float-panel'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
@@ -131,7 +228,7 @@
 
 <script type="text/javascript">
   window.canonical = {"closeEnable":true,"closeText":"关闭提示","originalHost":null,"officialHosts":["localhost"],"encoded":""};
-  window.canonical["param"] = {"permalink":"https://bluefatshao.github.io/2026/08/14/%E6%88%91%E4%BB%8E%E5%9F%83%E8%8E%B1%E5%A8%9C%E7%9A%84%E6%95%85%E4%BA%8B%E4%B8%AD%E6%B1%B2%E5%8F%96%E7%9A%84%E5%8A%9B%E9%87%8F/","checklink":"/js/plugins/video.js"};
+  window.canonical["param"] = {"permalink":"https://bluefatshao.github.io/2026/08/24/%E7%AE%A1%E9%81%93%E5%92%8Cgrep/","checklink":"/js/plugins/video.js"};
   // Fix: Ensure page is at the correct top position on data load
   if (history.scrollRestoration) {
     history.scrollRestoration = 'auto';
