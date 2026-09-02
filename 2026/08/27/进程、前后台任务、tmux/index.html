@@ -1558,7 +1558,39 @@
       });
   }, 'scrollreveal');
 </script>
+<script defer type="text/javascript" src="https://gcore.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
 <script>
+  utils.initPlugin(() => {
+    const els = document.querySelectorAll('.mermaid');
+    if (els.length > 0) {
+      const mermaid_config = {
+        startOnLoad: false,
+        theme:
+          "auto" == "auto" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "neutral",
+        logLevel: 3,
+        themeVariables: {
+          darkMode: true
+        },
+        flowchart: {
+          useMaxWidth: false,
+          htmlLabels: true,
+          curve: "linear"
+        },
+        gantt: {
+          axisFormat: "%Y/%m/%d"
+        },
+        sequence: {
+          actorMargin: 50
+        }
+      }
+      mermaid.initialize(mermaid_config);
+      mermaid.run();
+    }
+  }, 'mermaid');
+</script><script>
   utils.initPlugin(() => {
     const codeElements = document.querySelectorAll('.code');
     if (codeElements.length > 0) {
@@ -1578,5 +1610,5 @@
 
 
 <!-- inject -->
-<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><script src="/js/vendor/swup.js?v=4.9.2"></script><script>window.bluefatMusicConfig={title:"Claire 的歌单",server:"netease",type:"playlist",id:"5442557840"};</script><script src="/js/pjax.js?v=5"></script>
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><script src="/js/vendor/swup.js?v=4.9.2"></script><script>window.bluefatMusicConfig={title:"Claire 的歌单",server:"netease",type:"playlist",id:"5442557840"};</script><script src="/js/pjax.js?v=5"></script><script src="/js/knowledge-map.js?v=1"></script>
 </div></body></html>
