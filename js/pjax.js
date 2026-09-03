@@ -205,6 +205,27 @@
     }
   }
 
+  function typesetMath() {
+    const main = document.querySelector('#main');
+    if (!main || !window.MathJax) return;
+
+    function render() {
+      if (typeof window.MathJax.typesetPromise !== 'function') return;
+      if (typeof window.MathJax.typesetClear === 'function') {
+        window.MathJax.typesetClear([main]);
+      }
+      window.MathJax.typesetPromise([main]).catch(function (error) {
+        console.warn('MathJax typesetting failed:', error);
+      });
+    }
+
+    if (window.MathJax.startup && window.MathJax.startup.promise) {
+      window.MathJax.startup.promise.then(render);
+    } else {
+      render();
+    }
+  }
+
   mountGlobalMusic();
   initBooklistToggle();
 
@@ -228,6 +249,7 @@
 
   swup.hooks.on('page:view', function () {
     reinitializeStellar();
+    typesetMath();
     initBooklistToggle();
     window.scrollTo({ top: 0, behavior: 'instant' });
   });

@@ -65,7 +65,7 @@
 
 
 
-<widget class="widget-wrapper slide-up recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/research/tropical-cyclone/potential-intensity/"><span class="title">台风潜在强度：PI、MPI 与 DPI</span></a><a class="item title" href="/research/statistics/correlation-and-r-squared/"><span class="title">为什么一元线性回归中 R² 等于相关系数的平方</span></a><a class="item title" href="/research/air-sea-interaction/pmm/"><span class="title">PMM：太平洋经向模态</span></a><a class="item title" href="/research/tropical-cyclone/indices/"><span class="title">热带气旋指标：DGPI 与 PDI</span></a><a class="item title" href="/research/tropical-cyclone/dynamics/"><span class="title">台风中的绝对角动量与惯性稳定度</span></a><a class="item title" href="/research/meteorology/flow-functions/"><span class="title">流函数与速度势：旋转风和辐散风</span></a><a class="item title" href="/research/meteorology/humidity/"><span class="title">比湿、水汽混合比与相对湿度</span></a><a class="item title" href="/research/meteorology/adiabatic-process/"><span class="title">绝热过程、位温与湿中性</span></a><a class="item title" href="/research/meteorology/thermodynamic-laws/"><span class="title">大气热力学基础：热力学三定律</span></a><a class="item title" href="/2026/08/27/%E8%BF%9B%E7%A8%8B%E3%80%81%E5%89%8D%E5%90%8E%E5%8F%B0%E4%BB%BB%E5%8A%A1%E3%80%81tmux/"><span class="title">进程、前后台任务、tmux</span></a></div></widget>
+<widget class="widget-wrapper slide-up recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/research/tropical-cyclone/indices/"><span class="title">热带气旋指标：DGPI 与 PDI</span></a><a class="item title" href="/research/tropical-cyclone/potential-intensity/"><span class="title">台风潜在强度：PI、MPI 与 DPI</span></a><a class="item title" href="/research/meteorology/humidity/"><span class="title">比湿、水汽混合比与相对湿度</span></a><a class="item title" href="/research/meteorology/adiabatic-process/"><span class="title">绝热过程、位温与湿中性</span></a><a class="item title" href="/research/meteorology/thermodynamic-laws/"><span class="title">大气热力学基础：热力学三定律</span></a><a class="item title" href="/research/statistics/correlation-and-r-squared/"><span class="title">为什么一元线性回归中 R² 等于相关系数的平方</span></a><a class="item title" href="/research/air-sea-interaction/pmm/"><span class="title">PMM：太平洋经向模态</span></a><a class="item title" href="/research/tropical-cyclone/dynamics/"><span class="title">台风中的绝对角动量与惯性稳定度</span></a><a class="item title" href="/research/meteorology/flow-functions/"><span class="title">流函数与速度势：旋转风和辐散风</span></a><a class="item title" href="/2026/08/27/%E8%BF%9B%E7%A8%8B%E3%80%81%E5%89%8D%E5%90%8E%E5%8F%B0%E4%BB%BB%E5%8A%A1%E3%80%81tmux/"><span class="title">进程、前后台任务、tmux</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -1535,6 +1535,35 @@
       });
   }, 'scrollreveal');
 </script>
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"],
+      ],
+      processEscapes: true,
+      skipTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+    },
+    startup: {
+      ready() {
+        MathJax.startup.defaultReady();
+        MathJax.typesetPromise().then(() => {
+          const math = document.querySelectorAll("mjx-container");
+          math.forEach((element) => {
+            if (element.parentNode) {
+              element.parentNode.classList.add("has-jax");
+            }
+          });
+        });
+      },
+    },
+  };
+</script>
+
+<script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" async></script>
+
 <script defer type="text/javascript" src="https://gcore.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
 <script>
   utils.initPlugin(() => {
