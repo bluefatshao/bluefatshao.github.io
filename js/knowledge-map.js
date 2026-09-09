@@ -72,7 +72,12 @@
       const target = idsByName[relation['终点']];
       if (!source || !target) return;
       elements.push({
-        data: { id: 'relation-' + index, source: source, target: target },
+        data: {
+          id: 'relation-' + index,
+          source: source,
+          target: target,
+          label: relation['类型'] || '关联'
+        },
         classes: 'relation ' + (relationClasses[relation['类型']] || '')
       });
     });
@@ -116,6 +121,9 @@
       '.knowledge-map-legend i{width:11px;height:11px;border-radius:50%;background:#ddd}',
       '.knowledge-map-legend .is-thermo{background:#ef8e8e}.knowledge-map-legend .is-dynamics{background:#69aee8}.knowledge-map-legend .is-cyclone{background:#b57bd3}.knowledge-map-legend .is-ocean{background:#67bc7b}.knowledge-map-legend .is-method{background:#e3b448}',
       '.knowledge-map-legend .is-draft{box-sizing:border-box;background:transparent;border:2px dashed #9aa1aa}',
+      '.knowledge-map-legend .is-influence,.knowledge-map-legend .is-contrast{width:22px;height:0;border-radius:0;background:transparent}',
+      '.knowledge-map-legend .is-influence{border-top:3px solid #c2559e}',
+      '.knowledge-map-legend .is-contrast{border-top:2px dashed #377eae}',
       '@media(max-width:667px){.knowledge-map-toolbar{align-items:stretch;flex-direction:column}.knowledge-map-search{max-width:none}.knowledge-map-actions{justify-content:flex-start}#knowledge-map-graph{height:65vh;min-height:460px}.knowledge-map-info{align-items:flex-start;flex-direction:column}.knowledge-map-info a{margin-left:0}}'
     ].join('');
     document.head.appendChild(style);
@@ -172,9 +180,9 @@
           { selector: 'node:selected, node.search-match', style: { 'border-color': '#ff5f8f', 'border-width': 5, 'shadow-blur': 18, 'shadow-color': '#ff5f8f', 'shadow-opacity': .35 } },
           { selector: 'node.search-dim', style: { 'opacity': .16 } },
           { selector: 'edge', style: { 'width': 1.8, 'curve-style': 'bezier', 'line-color': '#a9b0b8', 'target-arrow-color': '#a9b0b8', 'target-arrow-shape': 'none', 'opacity': .75 } },
-          { selector: 'edge.relation', style: { 'line-style': 'dashed', 'target-arrow-shape': 'triangle', 'width': 1.4, 'opacity': .48 } },
-          { selector: 'edge.influences', style: { 'line-color': '#c67eb5', 'target-arrow-color': '#c67eb5' } },
-          { selector: 'edge.contrast', style: { 'line-color': '#6d9fc5', 'target-arrow-color': '#6d9fc5' } },
+          { selector: 'edge.relation', style: { 'label': 'data(label)', 'font-size': 8, 'font-weight': 700, 'color': '#59636e', 'text-background-color': '#ffffff', 'text-background-opacity': .9, 'text-background-padding': 3, 'text-background-shape': 'roundrectangle', 'width': 2.2, 'opacity': .88 } },
+          { selector: 'edge.influences', style: { 'line-style': 'solid', 'line-color': '#c2559e', 'target-arrow-color': '#c2559e', 'target-arrow-shape': 'triangle' } },
+          { selector: 'edge.contrast', style: { 'line-style': 'dashed', 'line-color': '#377eae', 'target-arrow-shape': 'none' } },
           { selector: 'edge.search-dim', style: { 'opacity': .06 } }
         ]
       });
