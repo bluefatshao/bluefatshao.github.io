@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.37.0" theme-name="Stellar" theme-version="1.37.0">
   
-  
+  <meta name="robots" content="noindex,follow">
   <meta name="generator" content="Hexo 8.1.2">
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin><link rel="preconnect" href="https://unpkg.com" crossorigin><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -17,29 +17,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
-  <title>台风潜在强度：PI、MPI 与 DPI - Claireのblog</title>
+  <title>标签：大气科学知识 - Claireのblog</title>
 
-  <meta name="description" content="潜在强度用于估计给定海洋和大气热力环境下，热带气旋能够达到的理论强度上限。它不是实际强度预报，因为风切变、干空气、内核结构和海洋冷却等过程都可能使实际强度低于这一上限。 PI 与 MPIPI 是 Potential Intensity，MPI 是 Maximum Potential Intensity。文献中的命名和具体实现可能不同，但二者通常都指热带气旋在理想化热力平衡下的潜在最大强度。一种常见">
-<meta property="og:type" content="article">
-<meta property="og:title" content="台风潜在强度：PI、MPI 与 DPI">
-<meta property="og:url" content="https://bluefatshao.github.io/research/tropical-cyclone/potential-intensity/">
-<meta property="og:site_name" content="台风潜在强度：PI、MPI 与 DPI">
-<meta property="og:description" content="潜在强度用于估计给定海洋和大气热力环境下，热带气旋能够达到的理论强度上限。它不是实际强度预报，因为风切变、干空气、内核结构和海洋冷却等过程都可能使实际强度低于这一上限。 PI 与 MPIPI 是 Potential Intensity，MPI 是 Maximum Potential Intensity。文献中的命名和具体实现可能不同，但二者通常都指热带气旋在理想化热力平衡下的潜在最大强度。一种常见">
+  <meta name="description" content="阅读、科研与音乐">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Claireのblog">
+<meta property="og:url" content="https://bluefatshao.github.io/tags/%E5%A4%A7%E6%B0%94%E7%A7%91%E5%AD%A6%E7%9F%A5%E8%AF%86/">
+<meta property="og:site_name" content="Claireのblog">
+<meta property="og:description" content="阅读、科研与音乐">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://bluefatshao.github.io/images/avatar.jpg">
-<meta property="article:published_time" content="2026-09-02T01:50:00.000Z">
-<meta property="article:modified_time" content="2026-09-03T06:15:37.602Z">
 <meta property="article:author" content="YP_Shao">
-<meta property="article:tag" content="DPI">
-<meta property="article:tag" content="MPI">
-<meta property="article:tag" content="PI">
-<meta property="article:tag" content="台风强度">
-<meta property="article:tag" content="名词解释">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://bluefatshao.github.io/images/avatar.jpg"><meta name="twitter:title" content="台风潜在强度：PI、MPI 与 DPI">
+<meta name="twitter:image" content="https://bluefatshao.github.io/images/avatar.jpg">
   
   
-  <meta name="keywords" content="名词解释,PI,MPI,DPI,台风强度">
+  
 
   <!-- feed -->
   
@@ -52,10 +45,10 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"YP_Shao","sameAs":[],"image":"https://bluefatshao.github.io/images/avatar.jpg"},"dateCreated":"2026-09-02T09:50:00+08:00","dateModified":"2026-09-03T14:15:37+08:00","datePublished":"2026-09-02T09:50:00+08:00","description":"","headline":"台风潜在强度：PI、MPI 与 DPI","mainEntityOfPage":{"@type":"WebPage","@id":"https://bluefatshao.github.io/research/tropical-cyclone/potential-intensity/"},"publisher":{"@type":"Organization","name":"YP_Shao","sameAs":[],"image":"https://bluefatshao.github.io/images/avatar.jpg","logo":{"@type":"ImageObject","url":"https://bluefatshao.github.io/images/avatar.jpg"}},"url":"https://bluefatshao.github.io/research/tropical-cyclone/potential-intensity/","keywords":"名词解释, PI, MPI, DPI, 台风强度","image":[]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"https://bluefatshao.github.io","author":{"@type":"Person","name":"YP_Shao","sameAs":[],"image":"https://bluefatshao.github.io/images/avatar.jpg"},"name":"Claireのblog","description":"阅读、科研与音乐","url":"https://bluefatshao.github.io"}</script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 </head>
-<body><div id="l_cover"></div><div class="l_body content" id="start" layout="post" type="story" text-indent><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+<body><div id="l_cover"></div><div class="l_body index" id="start" layout="undefined" type="undefined" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
 
 
 <header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">Claireのblog</div><div class="sub cap">阅读、科研与生活</div></a></div></header>
@@ -67,85 +60,28 @@
 <div class="widgets">
 <div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
 
-
-
 <widget class="widget-wrapper slide-up recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2026/09/15/%E5%AD%A3%E9%A3%8E%E5%8A%A8%E5%8A%9B%E5%AD%A6/"><span class="title">季风动力学</span></a><a class="item title" href="/2026/09/13/MAFALDA%E6%98%AF%E4%BB%80%E4%B9%88/"><span class="title">MAFALDA是什么</span></a><a class="item title" href="/2026/09/09/%E6%97%A5%E5%BF%97%E9%87%8D%E5%AE%9A%E5%90%91%E3%80%81nohup/"><span class="title">日志重定向、nohup</span></a><a class="item title" href="/research/tropical-cyclone/indices/"><span class="title">热带气旋指标：DGPI 与 PDI</span></a><a class="item title" href="/research/tropical-cyclone/potential-intensity/"><span class="title">台风潜在强度：PI、MPI 与 DPI</span></a><a class="item title" href="/research/meteorology/humidity/"><span class="title">比湿、水汽混合比与相对湿度</span></a><a class="item title" href="/research/meteorology/adiabatic-process/"><span class="title">绝热过程、位温与湿中性</span></a><a class="item title" href="/research/meteorology/thermodynamic-laws/"><span class="title">大气热力学基础：热力学三定律</span></a><a class="item title" href="/research/statistics/correlation-and-r-squared/"><span class="title">为什么一元线性回归中 R² 等于相关系数的平方</span></a><a class="item title" href="/research/air-sea-interaction/pmm/"><span class="title">PMM：太平洋经向模态</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
 
+<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">Claireのblog</div><div class="sub cap">阅读、科研与生活</div></a></div></header>
+
+ 
 
 
 
 
-<div class="article banner slide-up top">
-  <div class="content">
-    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
-<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E7%A7%91%E7%A0%94%E7%AC%94%E8%AE%B0/">科研笔记</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E7%A7%91%E7%A0%94%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%B0%94%E7%A7%91%E5%AD%A6/">大气科学</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E7%A7%91%E7%A0%94%E7%AC%94%E8%AE%B0/%E5%A4%A7%E6%B0%94%E7%A7%91%E5%AD%A6/%E7%83%AD%E5%B8%A6%E6%B0%94%E6%97%8B/">热带气旋</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2026-09-02T01:50:00.000Z">2026-09-02</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-09-03T06:15:37.602Z">2026-09-03</time></span></div></div></div>
-    
-    <div class="bottom only-title">
-      
-      <div class="text-area">
-        <h1 class="text title"><span>台风潜在强度：PI、MPI 与 DPI</span></h1>
-        
-      </div>
-    </div>
-    
-  </div>
-  </div><article class="md-text content slide-up"><p>潜在强度用于估计给定海洋和大气热力环境下，热带气旋能够达到的理论强度上限。它不是实际强度预报，因为风切变、干空气、内核结构和海洋冷却等过程都可能使实际强度低于这一上限。</p>
-<h2 id="PI-与-MPI"><a href="#PI-与-MPI" class="headerlink" title="PI 与 MPI"></a>PI 与 MPI</h2><p>PI 是 Potential Intensity，MPI 是 Maximum Potential Intensity。文献中的命名和具体实现可能不同，但二者通常都指热带气旋在理想化热力平衡下的潜在最大强度。一种常见表达为：</p>
-<p>$$<br>V_{PI}^2&#x3D;\frac{C_k}{C_D}\frac{T_s-T_o}{T_o}\left(k_s^*-k\right)<br>$$</p>
-<p>其中：</p>
-<ul>
-<li>$C_k$ 是海气焓交换系数；</li>
-<li>$C_D$ 是海面阻力系数；</li>
-<li>$T_s$ 是海表温度；</li>
-<li>$T_o$ 是出流层温度；</li>
-<li>$k_s^*$ 是海表温度下的饱和空气焓；</li>
-<li>$k$ 是近海面边界层空气焓。</li>
-</ul>
-<p>从公式可以看出，较暖的海表、较冷的出流层和较大的海气焓差通常对应更高的潜在强度，但实际解释必须结合完整的大气垂直廓线和计算方案。</p>
-<p>但 PI 只描述“最大近地面环向风速的理论上限”，而不是整个台风风场的总动能，也没有充分考虑水汽过程带来的能量损失(<a href="(https://journals.ametsoc.org/view/journals/clim/37/2/JCLI-D-22-0877.1.xml)">Regibeau-rockett et al</a>)。</p>
-<h2 id="DPI"><a href="#DPI" class="headerlink" title="DPI"></a>DPI</h2><p>DPI 是 Dynamic Potential Intensity，即动态潜在强度。传统 PI 常使用台风到来前的海表温度，但强风会混合上层海洋，把较冷的次表层海水卷入混合层，使台风下方海表降温。这会减少海洋向台风提供的热量和水汽，形成负反馈。</p>
-<p>DPI 的思路是先估算台风能够混合到的深度 $L$，再计算这一深度内的有效温度：</p>
-<p>$$<br>T_{dy}&#x3D;\frac{1}{L}\int_0^L T(z)\,dz<br>$$</p>
-<p>随后用 $T_{dy}$ 替代传统 PI 中的海表温度。混合深度不是固定值，而是由初始混合层、风应力、作用时间以及温盐控制的密度层结共同决定。</p>
-<h2 id="盐度为什么重要"><a href="#盐度为什么重要" class="headerlink" title="盐度为什么重要"></a>盐度为什么重要</h2><p>盐度层结可以抑制垂直混合。若表层存在较淡、较轻的水层，即使温度层结不强，密度层结也可能阻止冷水被卷到海面，从而减弱台风引起的海表降温。</p>
-<p>研究中可以分别使用真实温盐剖面和仅保留温度贡献的密度剖面计算 DPI，两者差异可用于估计盐度层结的影响。但“去掉盐度影响”的具体实验设置应严格按照所采用论文的方法说明。</p>
-<h2 id="三者的关系"><a href="#三者的关系" class="headerlink" title="三者的关系"></a>三者的关系</h2><ul>
-<li>PI&#x2F;MPI：描述理想化海气热力环境提供的强度上限。</li>
-<li>DPI：在 PI 框架中进一步考虑台风诱导的上层海洋混合和冷却。</li>
-<li>实际台风强度：还会受环境风切变、湿度、内核过程、移动速度等因素限制。</li>
-</ul>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
-<li>Emanuel, K. A. (1987), <a target="_blank" rel="noopener" href="https://www.nature.com/articles/326483a0">The dependence of hurricane intensity on climate</a>.</li>
-<li>Balaguru, K. et al. (2015), <a target="_blank" rel="noopener" href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2015GL064822">Dynamic Potential Intensity: An improved representation of the ocean’s impact on tropical cyclones</a>.</li>
-</ul>
-</article>
-<div class="article-footer slide-up">
-    <section id="license">
-      <div class="header"><span>许可协议</span></div>
-      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
-</div>
-    </section>
-    
-
-</div>
-
-<div class="related-wrap slide-up" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/research/tropical-cyclone/indices/">热带气旋指标：DGPI 与 PDI</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/research/tropical-cyclone/dynamics/">台风中的绝对角动量与惯性稳定度</a></div></section></div>
-
-
-
-
+<div class="navbar top"><div class="navbar-blur"><div class="navbar-container"><nav class="post"><a href="/">近期发布</a><a href="/categories/">分类</a><a class="active" href="/tags/">标签：大气科学知识</a><a href="/archives/">归档</a><a href="/knowledge-map/">知识地图</a></nav></div></div></div>
+<div class="post-list post"><div class="post-card-wrap slide-up"><a class="post-card post" href="/2026/09/15/%E5%AD%A3%E9%A3%8E%E5%8A%A8%E5%8A%9B%E5%AD%A6/">
+<article class="md-text"><h2 class="post-title">季风动力学</h2><div class="excerpt"><p>季风到底是什么季风（monsoon）的核心是大尺度环流和降水岁季节发生显著转换，其中最经典的动力学特征是低层盛行风发生季节性变化甚至反转，同时伴随明显的干湿季转换。现代研究通常不回仅凭“风向反转”判定季风，还会同时关注降水年循环。
+季风最基本的动力来源：海陆热力差异夏季大陆升温快，大陆上空空气柱变暖、厚度增加，高层产生压力梯度，并通过整个环流调整形成夏季季风环流；冬季则反过来。但季风并不是简...</p></div><div class="meta cap"><span class="cap" id="post-meta"><svg style="margin-bottom:2px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 2c.416 0 .753.324.753.724v1.46c.668-.012 1.417-.012 2.26-.012h4.015c.842 0 1.591 0 2.259.013v-1.46c0-.4.337-.725.753-.725s.753.324.753.724V4.25c1.445.111 2.394.384 3.09 1.055c.698.67.982 1.582 1.097 2.972L22 9H2v-.724c.116-1.39.4-2.302 1.097-2.972c.697-.67 1.645-.944 3.09-1.055V2.724c0-.4.337-.724.753-.724"/><path fill="currentColor" d="M22 14v-2c0-.839-.004-2.335-.017-3H2.01c-.013.665-.01 2.161-.01 3v2c0 3.771 0 5.657 1.172 6.828C4.343 22 6.228 22 10 22h4c3.77 0 5.656 0 6.828-1.172C22 19.658 22 17.772 22 14" opacity=".5"/><path fill="currentColor" d="M18 17a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-5 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0-4a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><time datetime="2026-09-15T03:13:17.000Z">2026-09-15</time></span></div></article>
+</a></div></div>
 
 
 <footer class="page-footer slide-up footnote"><hr><div class="text"><p>本站由 <a href="/">YP_Shao</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.37.0">Stellar 1.37.0</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
-<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right"><div class="widgets">
-
-<widget class="widget-wrapper slide-up toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#PI-%E4%B8%8E-MPI"><span class="toc-text">PI 与 MPI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DPI"><span class="toc-text">DPI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%90%E5%BA%A6%E4%B8%BA%E4%BB%80%E4%B9%88%E9%87%8D%E8%A6%81"><span class="toc-text">盐度为什么重要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E8%80%85%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">三者的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-text">参考文献</span></a></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
-</div></aside><div class='float-panel'>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right"></aside><div class='float-panel'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
   </button>
@@ -158,7 +94,7 @@
 
 <script type="text/javascript">
   window.canonical = {"closeEnable":true,"closeText":"关闭提示","originalHost":null,"officialHosts":["localhost"],"encoded":""};
-  window.canonical["param"] = {"permalink":"https://bluefatshao.github.io/research/tropical-cyclone/potential-intensity/","checklink":"/js/plugins/video.js"};
+  window.canonical["param"] = {"permalink":null,"checklink":"/js/plugins/video.js"};
   // Fix: Ensure page is at the correct top position on data load
   if (history.scrollRestoration) {
     history.scrollRestoration = 'auto';
